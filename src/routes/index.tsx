@@ -424,7 +424,7 @@ function DiscoverPakistan() {
           tabIndex={-1}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 p-5 backdrop-blur-xl">
           <div onClick={(e) => e.stopPropagation()} className="grid max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-border bg-card md:grid-cols-2">
-            <img src={selectedDestination[2]} alt={selectedDestination[0]} className="h-64 w-full object-cover md:h-full" />
+            <img src={selectedDestination[2]} alt={selectedDestination[0]} className="h-64 w-full object-cover md:h-full" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; }} />
             <div className="relative overflow-y-auto p-8 lg:p-10">
               <Button aria-label="Close destination details" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setSelectedDestination(null)}><X /></Button>
               <p className="text-xs uppercase tracking-[.25em] text-primary">{selectedDestination[1]}</p>
