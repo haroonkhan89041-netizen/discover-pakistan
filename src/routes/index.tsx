@@ -239,7 +239,7 @@ function DiscoverPakistan() {
           <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map(([name,loc,img,desc], i) => (
               <article className={`reveal premium-hover group relative h-[480px] overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-[0_20px_60px_oklch(0_0_0/16%)] ${i===0||i===7 ? "md:col-span-2 lg:col-span-2" : ""}`} key={name}>
-                <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                <img loading="lazy" decoding="async" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   src={img} alt={`${name}, ${loc}`} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex flex-col items-center p-7 text-center lg:p-9">
@@ -273,7 +273,7 @@ function DiscoverPakistan() {
               </div>
             </div>
             <div className="reveal relative min-h-[600px] overflow-hidden rounded-lg">
-              <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
+              <img loading="lazy" decoding="async" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
                 src={regionImages[region]} alt={regions[region]?.[0] ?? "Pakistan region"} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 p-8">
@@ -313,7 +313,7 @@ function DiscoverPakistan() {
                 <figure role="button" tabIndex={0} aria-haspopup="dialog" aria-label={`Enlarge ${cap}`} onClick={() => setLightbox(src)}
                   onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLightbox(src); } }}
                   className={`group relative cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${i===0 ? "row-span-2 md:col-span-2" : ""}`} key={cap}>
-                  <img loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={src} alt={cap} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+                  <img loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={src} alt={cap} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
                   <figcaption className="absolute bottom-0 p-5 text-xs uppercase tracking-[.18em] opacity-0 transition-opacity group-hover:opacity-100">{cap}</figcaption>
                 </figure>
               ))}
@@ -339,7 +339,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="cinematic" className="grain relative flex min-h-[90svh] items-center justify-center overflow-hidden">
-          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+          <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-background/45" />
           <h2 className="reveal relative text-center font-display text-6xl md:text-9xl">See Pakistan<br /><span className="italic text-primary">Differently.</span></h2>
         </section>
@@ -359,7 +359,7 @@ function DiscoverPakistan() {
               <figure role="button" tabIndex={0} aria-haspopup="dialog" aria-label={`Enlarge ${name} image`} onClick={() => setLightbox(img)}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLightbox(img); } }}
                 className="reveal premium-hover group relative cursor-zoom-in break-inside-avoid overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" key={`${name}-gallery`}>
-                <img loading="lazy" className={`cinematic-image w-full object-cover transition-transform duration-700 group-hover:scale-105 ${i%3===0 ? "h-[520px]" : "h-[340px]"}`} src={img} alt={name} />
+                <img loading="lazy" decoding="async" className={`cinematic-image w-full object-cover transition-transform duration-700 group-hover:scale-105 ${i%3===0 ? "h-[520px]" : "h-[340px]"}`} src={img} alt={name} />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background p-6 pt-20 font-display text-2xl opacity-0 transition-opacity group-hover:opacity-100">{name}</figcaption>
               </figure>
             ))}
@@ -367,7 +367,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="plan-your-journey" className="relative flex min-h-[75svh] items-center px-5 py-24 lg:px-10">
-          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Pakistan mountain lake landscape" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+          <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Pakistan mountain lake landscape" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/65 to-transparent" />
           <div className="reveal relative mx-auto w-full max-w-[1500px]">
             <p className="text-xs uppercase tracking-[.3em] text-primary">The horizon is calling</p>
