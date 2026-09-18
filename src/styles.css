@@ -262,3 +262,24 @@ button, a { touch-action: manipulation; }
   #destinations .grid article { height: 430px; }
   #destinations .grid article p { font-size: .82rem; }
 }
+
+/* Fine mobile viewport and interaction polish */
+@media (max-width: 767px) {
+  header > div { padding-inline: 1rem; }
+  header img { width: auto; max-width: 9.5rem; }
+  #home .relative.mx-auto { padding-inline: 1rem; }
+  #home .hero-reveal.max-w-2xl { font-size: .875rem; line-height: 1.65rem; }
+  #home .absolute.bottom-7 { right: 1rem; bottom: 1.25rem; }
+  #destinations > div:first-child { margin-bottom: 2.5rem; }
+  #destinations input { min-height: 2.75rem; }
+  #destinations .grid { gap: .75rem; }
+  #destinations .grid article { border-radius: .75rem; }
+  #destinations .grid article > div:last-child { padding: 1.35rem; }
+  #heritage article { scroll-snap-align: start; }
+}
+@media (max-width: 380px) {
+  #home h1 { font-size: 3.15rem; }
+  #home h2 { font-size: 1.75rem; }
+  #home .flex.flex-wrap { width: 100%; }
+  #home .flex.flex-wrap > * { width: 100%; }
+}
