@@ -218,10 +218,16 @@ function DiscoverPakistan() {
             </div>
             <div className="w-full max-w-md">
               <p className="mb-3 text-sm leading-7 text-muted-foreground">Search destinations by name, region or experience.</p>
-              <label className="flex items-center gap-3 rounded-md border border-border bg-card/60 px-4 py-3 focus-within:border-primary">
-                <Search className="h-4 w-4 text-primary" />
+              <label className="flex items-center gap-3 rounded-md border border-border bg-card/60 px-4 py-3 transition-colors focus-within:border-primary">
+                <Search className="h-4 w-4 shrink-0 text-primary" />
                 <input aria-label="Search destinations" value={query} onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search Pakistan..." className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground" />
+                {query && (
+                  <button type="button" aria-label="Clear destination search" onClick={() => setQuery("")}
+                    className="shrink-0 rounded-full p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
               </label>
             </div>
           </div>
