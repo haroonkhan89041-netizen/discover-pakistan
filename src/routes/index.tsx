@@ -198,7 +198,7 @@ function DiscoverPakistan() {
             <h1 className="hero-reveal font-display text-[clamp(4.8rem,14vw,13rem)] leading-[.73] tracking-normal">PAKISTAN</h1>
             <h2 className="hero-reveal mt-6 max-w-4xl font-display text-3xl italic leading-[1.08] md:text-6xl">Where Every Horizon Tells a Story.</h2>
             <p className="hero-reveal mt-7 max-w-2xl text-sm leading-7 text-foreground/75 md:text-base">
-              From the world’s highest mountains to ancient civilizations, vibrant cities, and untouched coastlines — discover a land of extraordinary beauty.
+              From some of the world’s highest mountains to ancient civilizations, vibrant cities, and dramatic coastlines — discover a land of extraordinary beauty.
             </p>
             <div className="hero-reveal mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" variant="gold"><a href="#destinations">Explore Pakistan <ArrowRight /></a></Button>
@@ -355,7 +355,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="plan-your-journey" className="relative flex min-h-[75svh] items-center px-5 py-24 lg:px-10">
-          <img className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Boat crossing Attabad Lake" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+          <img className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Pakistan mountain lake landscape" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/65 to-transparent" />
           <div className="reveal relative mx-auto w-full max-w-[1500px]">
             <p className="text-xs uppercase tracking-[.3em] text-primary">The horizon is calling</p>
