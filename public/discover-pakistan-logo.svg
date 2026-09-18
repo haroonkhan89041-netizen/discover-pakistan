@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" role="img" aria-labelledby="title desc">
+<title id="title">Discover Pakistan</title><desc id="desc">Luxury mountain, crescent and star emblem with Discover Pakistan wordmark</desc>
+<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7e7b0"/><stop offset=".5" stop-color="#d9b66f"/><stop offset="1" stop-color="#9c7131"/></linearGradient></defs>
+<g fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M28 177V88l40-40 40 40v89"/><path d="M45 104l23-25 25 25"/><path d="M40 177h57"/><path d="M68 48c-4-15 4-29 18-36-2 15 5 27 17 34-11 1-22 1-35 2Z"/><path d="M118 38l3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z"/><path d="M18 190h126"/>
+</g>
+<text x="166" y="105" fill="#f5f0e6" font-family="Georgia, 'Times New Roman', serif" font-size="54" letter-spacing="7">DISCOVER</text>
+<text x="168" y="163" fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="55" letter-spacing="8">PAKISTAN</text>
+<text x="171" y="194" fill="#9f9a91" font-family="Arial, sans-serif" font-size="12" letter-spacing="4.5">WHERE EVERY HORIZON TELLS A STORY</text>
+</svg>
