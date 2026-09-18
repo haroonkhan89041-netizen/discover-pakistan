@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -193,4 +194,52 @@ button:active, a:active { transform: scale(.98); }
 }
 @media (max-width: 420px) {
   #home h1 { font-size: clamp(3.35rem, 17.5vw, 5rem); }
+}
+
+
+/* Mobile layout refinement */
+@media (max-width: 767px) {
+  header > nav#mobile-navigation {
+    max-height: calc(100svh - 5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 24px 60px oklch(0 0 0 / 22%);
+  }
+  #destinations .grid article {
+    min-height: 430px;
+  }
+  #destinations .grid article > div:last-child {
+    padding: 1.5rem;
+  }
+  #destinations .grid article h3 {
+    font-size: 2rem;
+  }
+  #destinations .grid article p {
+    line-height: 1.55rem;
+  }
+  #culture > div > div:nth-child(2) {
+    height: 560px;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+  #heritage .overflow-x-auto {
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    scrollbar-width: thin;
+  }
+  #heritage article {
+    height: 400px;
+    min-width: min(82vw, 340px);
+  }
+  #plan-your-journey {
+    min-height: 78svh;
+  }
+}
+@media (max-width: 420px) {
+  #culture > div > div:nth-child(2) {
+    height: 500px;
+  }
+  #plan-your-journey h2 {
+    font-size: 2.75rem;
+    line-height: 1.02;
+  }
 }
