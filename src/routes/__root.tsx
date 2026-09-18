@@ -17,7 +17,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     { charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" },
     { title: "Discover Pakistan | Where Every Horizon Tells a Story" },
     { name: "description", content: "Journey through Pakistan's majestic mountains, ancient heritage, vibrant cities, and extraordinary culture." },
-    { name: "author", content: "Discover Pakistan" }, { property: "og:title", content: "Discover Pakistan" },
+    { name: "author", content: "Discover Pakistan" }, { rel: "canonical", href: "https://discover-pakistan-blue.vercel.app/" },
+    { property: "og:url", content: "https://discover-pakistan-blue.vercel.app/" }, { property: "og:title", content: "Discover Pakistan" },
     { property: "og:description", content: "Where every horizon tells a story." }, { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ], links: [
