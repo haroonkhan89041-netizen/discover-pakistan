@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
 const images = {
   // Location-specific editorial imagery: each destination gets a visual matching its identity.
   hunza: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1280px-Hunza_Valley%2C_Pakistan.jpg",
-  lake: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1600px-Hunza_Valley%2C_Pakistan.jpg",
+  lake: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Attabad_Lake%2C_Hunza_Pakistan.jpg/1600px-Attabad_Lake%2C_Hunza_Pakistan.jpg",
   skardu: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Skardu_%2C_Pakistan.jpg/1280px-Skardu_%2C_Pakistan.jpg",
   fairy: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Nanga_Parbat_from_Fairy_Meadow.jpg/1280px-Nanga_Parbat_from_Fairy_Meadow.jpg",
   swat: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Mountains_in_Swat_Valley1.jpg/1280px-Mountains_in_Swat_Valley1.jpg",
@@ -36,13 +36,13 @@ const images = {
   multan: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/1280px-Shah_Rukn-e-Alam_Shrine.jpg",
   mohenjo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Panoramic_view_of_the_stupa_mound_and_great_bath_in_Mohenjodaro.JPG/1280px-Panoramic_view_of_the_stupa_mound_and_great_bath_in_Mohenjodaro.JPG",
   gwadar: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Gwadar%2C_Balochistan.jpg",
-  deosai: "https://upload.wikimedia.org/wikipedia/commons/5/57/Green_Deosai_Plains.jpg",
+  deosai: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Unnamed_lake_Deosai_plain%2C_just_beneath_the_Burji_La_Pass.jpg/1280px-Unnamed_lake_Deosai_plain%2C_just_beneath_the_Burji_La_Pass.jpg",
   cholistan: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg/1280px-Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg",
   taxila: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Dharmarajika_stupa_and_monastery_c_by_Usman_Ghani.jpg/1280px-Dharmarajika_stupa_and_monastery_c_by_Usman_Ghani.jpg",
   makli: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/PK_Thatta_asv2020-02_img25_Makli_Necropolis.jpg/1280px-PK_Thatta_asv2020-02_img25_Makli_Necropolis.jpg",
   rohtas: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Fort_Rohtas.jpg/1280px-Fort_Rohtas.jpg",
-  shahRukn: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/3840px-Shah_Rukn-e-Alam_Shrine.jpg",
-  peaks: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1600px-Hunza_Valley%2C_Pakistan.jpg",
+  shahRukn: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Tomb_of_Shah_Rukn-e-Alam%2C_Multan_-_Front_Courtyard.jpg/1280px-Tomb_of_Shah_Rukn-e-Alam%2C_Multan_-_Front_Courtyard.jpg",
+  peaks: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Attabad_Lake%2C_Hunza_Pakistan.jpg/1600px-Attabad_Lake%2C_Hunza_Pakistan.jpg",
   desert: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg/1600px-Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg",
 };
 
