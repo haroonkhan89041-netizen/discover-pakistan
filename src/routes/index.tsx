@@ -178,7 +178,7 @@ function DiscoverPakistan() {
 
       <main>
         <section id="home" className="grain relative flex min-h-[96svh] items-end overflow-hidden pb-20 pt-32">
-          <img className="hero-bg cinematic-image absolute -inset-y-[18%] h-[136%] w-full object-cover" src={images.hunza}
+          <img className="hero-bg cinematic-image absolute -inset-y-[18%] h-[136%] w-full object-cover scale-[1.03]" src={images.hunza}
             alt="Pakistan mountain landscape" fetchPriority="high" onError={(e) => { e.currentTarget.style.display = "none"; }} />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/20" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
