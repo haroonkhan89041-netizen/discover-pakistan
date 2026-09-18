@@ -27,27 +27,27 @@ export const Route = createFileRoute("/")({
 
 const images = {
   // Location-specific editorial imagery: each destination gets a visual matching its identity.
-  hunza: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1280px-Hunza_Valley%2C_Pakistan.jpg",
-  lake: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Attabad_Lake%2C_Hunza_Pakistan.jpg/1600px-Attabad_Lake%2C_Hunza_Pakistan.jpg",
-  skardu: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Skardu_%2C_Pakistan.jpg/1280px-Skardu_%2C_Pakistan.jpg",
-  fairy: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Nanga_Parbat_from_Fairy_Meadow.jpg/1280px-Nanga_Parbat_from_Fairy_Meadow.jpg",
-  swat: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Mountains_in_Swat_Valley1.jpg/1280px-Mountains_in_Swat_Valley1.jpg",
-  lahore: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Badshahi_Mosque%2C_Lahore..JPG",
-  lahoreFort: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lahore_Fort_Punjab.jpg/1280px-Lahore_Fort_Punjab.jpg",
-  badshahi: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Badshahi_Mosque%2C_Lahore..JPG",
-  islamabad: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Faisal_Mosque_islamabad_07.jpg/1280px-Faisal_Mosque_islamabad_07.jpg",
-  karachi: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/PK_Karachi_asv2020-02_img13_Clifton_Beach.jpg/1200px-PK_Karachi_asv2020-02_img13_Clifton_Beach.jpg",
-  multan: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/1280px-Shah_Rukn-e-Alam_Shrine.jpg",
-  mohenjo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Panoramic_view_of_the_stupa_mound_and_great_bath_in_Mohenjodaro.JPG/1280px-Panoramic_view_of_the_stupa_mound_and_great_bath_in_Mohenjodaro.JPG",
-  gwadar: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Gwadar%2C_Balochistan.jpg",
-  deosai: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Unnamed_lake_Deosai_plain%2C_just_beneath_the_Burji_La_Pass.jpg/1280px-Unnamed_lake_Deosai_plain%2C_just_beneath_the_Burji_La_Pass.jpg",
-  cholistan: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg/1280px-Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg",
-  taxila: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Dharmarajika_stupa_and_monastery_c_by_Usman_Ghani.jpg/1280px-Dharmarajika_stupa_and_monastery_c_by_Usman_Ghani.jpg",
-  makli: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/PK_Thatta_asv2020-02_img25_Makli_Necropolis.jpg/1280px-PK_Thatta_asv2020-02_img25_Makli_Necropolis.jpg",
-  rohtas: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Fort_Rohtas.jpg/1280px-Fort_Rohtas.jpg",
-  shahRukn: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Tomb_of_Shah_Rukn-e-Alam%2C_Multan_-_Front_Courtyard.jpg/1280px-Tomb_of_Shah_Rukn-e-Alam%2C_Multan_-_Front_Courtyard.jpg",
-  peaks: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Attabad_Lake%2C_Hunza_Pakistan.jpg/1600px-Attabad_Lake%2C_Hunza_Pakistan.jpg",
-  desert: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg/1600px-Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg",
+  hunza: "https://commons.wikimedia.org/wiki/Special:FilePath/Hunza_Valley%2C_Pakistan.jpg?width=1600",
+  lake: "https://commons.wikimedia.org/wiki/Special:FilePath/Attabad_Lake%2C_Hunza_Pakistan.jpg?width=1600",
+  skardu: "https://commons.wikimedia.org/wiki/Special:FilePath/Skardu_%2C_Pakistan.jpg?width=1600",
+  fairy: "https://commons.wikimedia.org/wiki/Special:FilePath/Nanga_Parbat_from_Fairy_Meadow.jpg?width=1600",
+  swat: "https://commons.wikimedia.org/wiki/Special:FilePath/Mountains_in_Swat_Valley1.jpg?width=1600",
+  lahore: "https://commons.wikimedia.org/wiki/Special:FilePath/Badshahi_Mosque%2C_Lahore..JPG?width=1600",
+  lahoreFort: "https://commons.wikimedia.org/wiki/Special:FilePath/Lahore_Fort_Punjab.jpg?width=1600",
+  badshahi: "https://commons.wikimedia.org/wiki/Special:FilePath/Badshahi_Mosque%2C_Lahore..JPG?width=1600",
+  islamabad: "https://commons.wikimedia.org/wiki/Special:FilePath/Faisal_Mosque_islamabad_07.jpg?width=1600",
+  karachi: "https://commons.wikimedia.org/wiki/Special:FilePath/PK_Karachi_asv2020-02_img13_Clifton_Beach.jpg?width=1600",
+  multan: "https://commons.wikimedia.org/wiki/Special:FilePath/Shah_Rukn-e-Alam_Shrine.jpg?width=1600",
+  mohenjo: "https://commons.wikimedia.org/wiki/Special:FilePath/Panoramic_view_of_the_stupa_mound_and_great_bath_in_Mohenjodaro.JPG?width=1600",
+  gwadar: "https://commons.wikimedia.org/wiki/Special:FilePath/Gwadar%2C_Balochistan.jpg?width=1600",
+  deosai: "https://commons.wikimedia.org/wiki/Special:FilePath/Unnamed_lake_Deosai_plain%2C_just_beneath_the_Burji_La_Pass.jpg?width=1600",
+  cholistan: "https://commons.wikimedia.org/wiki/Special:FilePath/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg?width=1600",
+  taxila: "https://commons.wikimedia.org/wiki/Special:FilePath/Dharmarajika_stupa_and_monastery_c_by_Usman_Ghani.jpg?width=1600",
+  makli: "https://commons.wikimedia.org/wiki/Special:FilePath/PK_Thatta_asv2020-02_img25_Makli_Necropolis.jpg?width=1600",
+  rohtas: "https://commons.wikimedia.org/wiki/Special:FilePath/Fort_Rohtas.jpg?width=1600",
+  shahRukn: "https://commons.wikimedia.org/wiki/Special:FilePath/Tomb_of_Shah_Rukn-e-Alam%2C_Multan_-_Front_Courtyard.jpg?width=1600",
+  peaks: "https://commons.wikimedia.org/wiki/Special:FilePath/Attabad_Lake%2C_Hunza_Pakistan.jpg?width=1600",
+  desert: "https://commons.wikimedia.org/wiki/Special:FilePath/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg?width=1600",
 };
 
 const destinations = [
@@ -76,7 +76,7 @@ const regions = [
 ] as const;
 
 const regionImages = [
-  images.hunza, "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Azad_Kashmir_-_Neelum_Valley.jpg/1280px-Azad_Kashmir_-_Neelum_Valley.jpg", images.lahore, images.mohenjo,
+  images.hunza, "https://commons.wikimedia.org/wiki/Special:FilePath/Azad_Kashmir_-_Neelum_Valley.jpg?width=1600", images.lahore, images.mohenjo,
   images.swat, images.gwadar, images.islamabad,
 ] as const;
 
