@@ -261,7 +261,7 @@ function DiscoverPakistan() {
               </div>
             </div>
             <div className="reveal relative min-h-[600px] overflow-hidden rounded-lg">
-              <img className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
+              <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
                 src={regionImages[region]} alt={regions[region]?.[0] ?? "Pakistan region"} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 p-8">
@@ -317,7 +317,7 @@ function DiscoverPakistan() {
             <div className="mt-14 flex snap-x gap-4 overflow-x-auto pb-7">
               {heritage.map(([year,name,img]) => (
                 <article className="group relative h-[460px] min-w-[310px] snap-center overflow-hidden rounded-lg md:min-w-[390px]" key={name}>
-                  <img className="cinematic-image h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={img} alt={name} loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+                  <img decoding="async" className="cinematic-image h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={img} alt={name} loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                   <div className="absolute bottom-0 p-7"><p className="text-xs tracking-[.25em] text-primary">{year}</p><h3 className="mt-2 font-display text-3xl">{name}</h3></div>
                 </article>
@@ -327,7 +327,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="cinematic" className="grain relative flex min-h-[90svh] items-center justify-center overflow-hidden">
-          <img className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-background/45" />
           <h2 className="reveal relative text-center font-display text-6xl md:text-9xl">See Pakistan<br /><span className="italic text-primary">Differently.</span></h2>
         </section>
@@ -355,7 +355,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="plan-your-journey" className="relative flex min-h-[75svh] items-center px-5 py-24 lg:px-10">
-          <img className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Pakistan mountain lake landscape" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Pakistan mountain lake landscape" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/65 to-transparent" />
           <div className="reveal relative mx-auto w-full max-w-[1500px]">
             <p className="text-xs uppercase tracking-[.3em] text-primary">The horizon is calling</p>
