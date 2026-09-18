@@ -94,9 +94,9 @@ const cultureImages: ReadonlyArray<readonly [string, string]> = [
 ];
 
 const heritage = [
-  ["2600 BCE","Indus Valley Civilization",images.mohenjo],
-  ["2500 BCE","Mohenjo-daro",images.mohenjo],
-  ["600 BCE","Taxila",images.taxila],
+  ["c. 2600 BCE","Indus Valley Civilization",images.mohenjo],
+  ["c. 2500 BCE","Mohenjo-daro",images.mohenjo],
+  ["c. 600 BCE","Taxila",images.taxila],
   ["14th C.","Makli Necropolis",images.makli],
   ["1526","Mughal Empire",images.lahore],
   ["1541","Rohtas Fort",images.rohtas],
@@ -420,6 +420,8 @@ function DiscoverPakistan() {
 
       {selectedDestination && (
         <div role="dialog" aria-modal="true" aria-label={`${selectedDestination[0]} details`} onClick={() => setSelectedDestination(null)}
+          onKeyDown={(e) => { if (e.key === "Escape") setSelectedDestination(null); }}
+          tabIndex={-1}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 p-5 backdrop-blur-xl">
           <div onClick={(e) => e.stopPropagation()} className="grid max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-border bg-card md:grid-cols-2">
             <img src={selectedDestination[2]} alt={selectedDestination[0]} className="h-64 w-full object-cover md:h-full" />
@@ -440,6 +442,8 @@ function DiscoverPakistan() {
 
       {lightbox && (
         <div role="dialog" aria-modal="true" aria-label="Enlarged Pakistan gallery image" onClick={() => setLightbox(null)}
+          onKeyDown={(e) => { if (e.key === "Escape") setLightbox(null); }}
+          tabIndex={-1}
           className="fixed inset-0 z-[110] flex cursor-zoom-out items-center justify-center bg-background/95 p-5 backdrop-blur-xl">
           <Button aria-label="Close image" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setLightbox(null)}><X /></Button>
           <img className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain" src={lightbox} alt="Pakistan gallery enlarged view" />
