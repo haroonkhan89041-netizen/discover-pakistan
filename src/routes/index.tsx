@@ -82,8 +82,8 @@ const experiences: ReadonlyArray<[ComponentType<{ className?: string }>, string,
 const cultureImages: ReadonlyArray<readonly [string, string]> = [[images.culture,"Traditional architecture"],[images.food,"A table made for sharing"],[images.lahore,"Mughal artistry"],[images.desert,"Desert traditions"],[images.city,"Modern expression"]];
 
 function DiscoverPakistan() {
- const root = useRef<HTMLDivElement>(null); const [menu,setMenu]=useState(false); const [region,setRegion]=useState(0); const [lightbox,setLightbox]=useState<string|null>(null);
- useEffect(()=>{ let ctx:{revert:()=>void}|undefined; void import("gsap").then(({default:gsap})=>import("gsap/ScrollTrigger").then(({ScrollTrigger})=>{ gsap.registerPlugin(ScrollTrigger); ctx=gsap.context(()=>{
+ const root = useRef<HTMLDivElement>(null); const [menu,setMenu]=useState(false); const [region,setRegion]=useState(0); const [lightbox,setLightbox]=useState<string|null>(null);\n useEffect(()=>{ if(!menu) return; const onKey=(e:KeyboardEvent)=>{ if(e.key==="Escape") setMenu(false); }; window.addEventListener("keydown",onKey); return()=>window.removeEventListener("keydown",onKey); },[menu]);
+ useEffect(()=>{ let ctx:{revert:()=>void}|undefined; if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; void import("gsap").then(({default:gsap})=>import("gsap/ScrollTrigger").then(({ScrollTrigger})=>{ gsap.registerPlugin(ScrollTrigger); ctx=gsap.context(()=>{
    gsap.from(".hero-reveal",{y:70,opacity:0,duration:1.25,stagger:.12,ease:"power3.out"});
    gsap.utils.toArray<HTMLElement>(".reveal").forEach(el=>gsap.from(el,{y:45,opacity:0,duration:.9,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 86%"}}));
    gsap.to(".hero-bg",{yPercent:18,ease:"none",scrollTrigger:{trigger:"#home",start:"top top",end:"bottom top",scrub:true}});
@@ -93,8 +93,8 @@ function DiscoverPakistan() {
   <header className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/40 backdrop-blur-xl">
    <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 lg:px-10"><a href="#home" className="font-display text-lg tracking-[.2em]">DISCOVER <span className="text-primary">PAKISTAN</span></a>
    <nav aria-label="Main navigation" className="hidden items-center gap-7 text-[11px] uppercase tracking-[.16em] text-muted-foreground lg:flex">{["Home","Destinations","Experiences","Culture","Heritage","Plan Your Journey"].map(n=><a className="transition-colors hover:text-primary" href={`#${n.toLowerCase().replaceAll(" ","-")}`} key={n}>{n}</a>)}</nav>
-   <div className="hidden lg:block"><Button asChild variant="gold"><a href="#destinations">Explore now <ArrowRight/></a></Button></div><Button aria-label="Open menu" variant="ghost" size="icon" className="lg:hidden" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</Button></div>
-   {menu&&<nav className="grid gap-5 border-t border-border bg-background p-6 lg:hidden">{["Home","Destinations","Experiences","Culture","Heritage","Plan Your Journey"].map(n=><a onClick={close} href={`#${n.toLowerCase().replaceAll(" ","-")}`} key={n}>{n}</a>)}</nav>}
+   <div className="hidden lg:block"><Button asChild variant="gold"><a href="#destinations">Explore now <ArrowRight/></a></Button></div><Button aria-label={menu?"Close menu":"Open menu"} aria-expanded={menu} aria-controls="mobile-navigation" variant="ghost" size="icon" className="lg:hidden" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</Button></div>
+   {menu&&<nav id="mobile-navigation" aria-label="Mobile navigation" className="grid gap-5 border-t border-border bg-background p-6 lg:hidden">{["Home","Destinations","Experiences","Culture","Heritage","Plan Your Journey"].map(n=><a onClick={close} href={`#${n.toLowerCase().replaceAll(" ","-")}`} key={n}>{n}</a>)}</nav>}
   </header>
   <main>
    <section id="home" className="grain relative flex min-h-[96svh] items-end overflow-hidden pb-20 pt-32">
