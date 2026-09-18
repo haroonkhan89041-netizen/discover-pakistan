@@ -369,7 +369,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="about" className="border-y border-border bg-card/30 px-5 py-24 lg:px-10 lg:py-32 text-center">
-          <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1.1fr_.9fr]">
+          <div className="mx-auto grid max-w-[1500px] items-center gap-12 lg:grid-cols-[1.1fr_.9fr]">
             <div className="reveal">
               <p className="text-xs uppercase tracking-[.3em] text-primary">About Discover Pakistan</p>
               <h2 className="mt-4 font-display text-5xl md:text-7xl">A gateway to a country of contrasts.</h2>
@@ -384,7 +384,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="contact" className="px-5 py-24 lg:px-10 lg:py-32 text-center">
-          <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1fr_.8fr]">
+          <div className="mx-auto grid max-w-[1500px] items-center gap-12 lg:grid-cols-[1fr_.8fr]">
             <div className="reveal">
               <p className="text-xs uppercase tracking-[.3em] text-primary">Plan your next horizon</p>
               <h2 className="mt-4 font-display text-5xl md:text-7xl">Have a question?<br /><span className="italic text-primary">Let's explore.</span></h2>
@@ -392,8 +392,8 @@ function DiscoverPakistan() {
               <a href="https://tourism.gov.pk/" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 text-sm text-primary hover:text-foreground"><Compass className="h-4 w-4" /> Official Pakistan tourism resources <ArrowRight className="h-4 w-4" /></a>
             </div>
             <div className="reveal grid gap-3">
-              <div className="rounded-lg border border-border bg-card p-7"><Clock className="h-5 w-5 text-primary" /><h3 className="mt-5 font-display text-2xl">Take your time</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Save this guide and build your route around the places that inspire you most.</p></div>
-              <div className="rounded-lg border border-border bg-card p-7"><Compass className="h-5 w-5 text-primary" /><h3 className="mt-5 font-display text-2xl">Follow the horizon</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Use the destination search above to move from mountains to cities, heritage and coast.</p></div>
+              <div className="premium-hover rounded-lg border border-border bg-card p-7"><Clock className="h-5 w-5 text-primary" /><h3 className="mt-5 font-display text-2xl">Take your time</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Save this guide and build your route around the places that inspire you most.</p></div>
+              <div className="premium-hover rounded-lg border border-border bg-card p-7"><Compass className="h-5 w-5 text-primary" /><h3 className="mt-5 font-display text-2xl">Follow the horizon</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Use the destination search above to move from mountains to cities, heritage and coast.</p></div>
             </div>
           </div>
         </section>
