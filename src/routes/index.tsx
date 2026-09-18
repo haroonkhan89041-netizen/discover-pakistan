@@ -210,7 +210,7 @@ function DiscoverPakistan() {
           </a>
         </section>
 
-        <section id="destinations" className="px-5 py-24 lg:px-10 lg:py-36">
+        <section id="destinations" className="px-5 py-24 lg:px-10 lg:py-36 text-center">
           <div className="reveal mx-auto mb-14 flex max-w-[1500px] flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="mb-4 text-xs uppercase tracking-[.3em] text-primary">Twelve remarkable worlds</p>
@@ -273,7 +273,7 @@ function DiscoverPakistan() {
           </div>
         </section>
 
-        <section id="experiences" className="px-5 py-24 lg:px-10 lg:py-36">
+        <section id="experiences" className="px-5 py-24 lg:px-10 lg:py-36 text-center">
           <div className="reveal mx-auto max-w-[1500px]">
             <p className="text-xs uppercase tracking-[.3em] text-primary">Curated experiences</p>
             <h2 className="mt-4 max-w-4xl font-display text-5xl md:text-7xl">Experience Pakistan<br /><span className="italic">Beyond the Ordinary.</span></h2>
@@ -290,7 +290,7 @@ function DiscoverPakistan() {
           </div>
         </section>
 
-        <section id="culture" className="bg-foreground px-5 py-24 text-background lg:px-10 lg:py-32">
+        <section id="culture" className="bg-foreground px-5 py-24 text-background lg:px-10 lg:py-32 text-center">
           <div className="mx-auto max-w-[1500px]">
             <div className="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div><p className="text-xs uppercase tracking-[.3em] text-accent">A living tapestry</p><h2 className="mt-4 font-display text-5xl md:text-7xl">A Culture Written<br /><span className="italic">in Colour.</span></h2></div>
@@ -310,7 +310,7 @@ function DiscoverPakistan() {
           </div>
         </section>
 
-        <section id="heritage" className="overflow-hidden px-5 py-24 lg:px-10 lg:py-32">
+        <section id="heritage" className="overflow-hidden px-5 py-24 lg:px-10 lg:py-32 text-center">
           <div className="mx-auto max-w-[1500px]">
             <p className="reveal text-xs uppercase tracking-[.3em] text-primary">Five millennia in motion</p>
             <h2 className="reveal mt-4 font-display text-5xl md:text-7xl">Walk Through Time.</h2>
@@ -368,7 +368,7 @@ function DiscoverPakistan() {
           </div>
         </section>
 
-        <section id="about" className="border-y border-border bg-card/30 px-5 py-24 lg:px-10 lg:py-32">
+        <section id="about" className="border-y border-border bg-card/30 px-5 py-24 lg:px-10 lg:py-32 text-center">
           <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1.1fr_.9fr]">
             <div className="reveal">
               <p className="text-xs uppercase tracking-[.3em] text-primary">About Discover Pakistan</p>
@@ -383,7 +383,7 @@ function DiscoverPakistan() {
           </div>
         </section>
 
-        <section id="contact" className="px-5 py-24 lg:px-10 lg:py-32">
+        <section id="contact" className="px-5 py-24 lg:px-10 lg:py-32 text-center">
           <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1fr_.8fr]">
             <div className="reveal">
               <p className="text-xs uppercase tracking-[.3em] text-primary">Plan your next horizon</p>
