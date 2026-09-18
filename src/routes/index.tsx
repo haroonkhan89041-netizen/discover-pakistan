@@ -18,33 +18,44 @@ export const Route = createFileRoute("/")({
   ]}), component: DiscoverPakistan,
 });
 
+const commons = (file: string) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}`;
+
 const images = {
   hunza: hunzaAsset.url,
   lake: lakeAsset.url,
-  mosque: skarduAsset.url,
-  lahore: hunzaAsset.url,
+  skardu: commons("Skardu , Pakistan.jpg"),
+  fairy: commons("Fairy Meadows, Pakistan.jpg"),
+  swat: commons("Swat Valley - Pakistan.jpg"),
+  lahore: commons("BADSHAHI MOSQUE LAHORE.jpg"),
+  islamabad: commons("Faisal mosque islamabad.jpg"),
+  karachi: commons("Karachi sea.jpg"),
+  multan: commons("Shrine Shah Rukn-e-Alam.jpg"),
+  mohenjo: commons("Mohenjodaro.jpg"),
+  gwadar: commons("Gwadar, Balochistan.jpg"),
+  deosai: commons("Deosai Pakistan.jpg"),
+  cholistan: commons("Derawar Fort Cholistan.jpg"),
   peaks: skarduAsset.url,
   meadow: fairyAsset.url,
-  coast: lakeAsset.url,
-  desert: hunzaAsset.url,
-  city: skarduAsset.url,
-  culture: fairyAsset.url,
+  coast: commons("Gwadar, Balochistan.jpg"),
+  desert: commons("Cholistan pakistan.jpg"),
+  culture: commons("BADSHAHI MOSQUE LAHORE.jpg"),
   food: lakeAsset.url,
 };
 
 const destinations = [
-  ["Hunza Valley","Gilgit–Baltistan",images.lake,"Turquoise waters, storied forts and the cathedral peaks of the Karakoram."],
-  ["Skardu","Gilgit–Baltistan",images.peaks,"A sublime gateway to high mountains, alpine lakes and vast cold deserts."],
-  ["Fairy Meadows","Gilgit–Baltistan",images.meadow,"Wildflower meadows beneath the immense, silent face of Nanga Parbat."],
-  ["Swat Valley","Khyber Pakhtunkhwa",images.meadow,"Emerald forests, crystalline rivers and timeless mountain villages."],
+  ["Hunza Valley","Gilgit–Baltistan",images.hunza,"Turquoise waters, storied forts and the cathedral peaks of the Karakoram."],
+  ["Skardu","Gilgit–Baltistan",images.skardu,"A sublime gateway to high mountains, alpine lakes and vast cold deserts."],
+  ["Fairy Meadows","Gilgit–Baltistan",images.fairy,"Wildflower meadows beneath the immense, silent face of Nanga Parbat."],
+  ["Swat Valley","Khyber Pakhtunkhwa",images.swat,"Emerald forests, crystalline rivers and timeless mountain villages."],
   ["Lahore","Punjab",images.lahore,"Mughal grandeur, legendary cuisine and a city alive with colour."],
-  ["Islamabad","Federal Capital",images.mosque,"Modern elegance framed by the green folds of the Margalla Hills."],
-  ["Karachi","Sindh",images.city,"A restless coastal metropolis where commerce, culture and the sea meet."],
-  ["Multan","Punjab",images.culture,"The City of Saints, wrapped in blue tilework and centuries of devotion."],
-  ["Mohenjo-daro","Sindh",images.desert,"Walk the remarkably planned streets of a 5,000-year-old civilization."],
-  ["Gwadar","Balochistan",images.coast,"Sculpted headlands and luminous coves along the Makran Coast."],
-  ["Deosai","Gilgit–Baltistan",images.peaks,"An endless high-altitude plain where sky, wildlife and silence prevail."],
-  ["Cholistan Desert","Punjab",images.desert,"Golden dunes, nomadic traditions and the monumental Derawar Fort."],
+  ["Islamabad","Federal Capital",images.islamabad,"Modern elegance framed by the green folds of the Margalla Hills."],
+  ["Karachi","Sindh",images.karachi,"A restless coastal metropolis where commerce, culture and the sea meet."],
+  ["Multan","Punjab",images.multan,"The City of Saints, wrapped in blue tilework and centuries of devotion."],
+  ["Mohenjo-daro","Sindh",images.mohenjo,"Walk the remarkably planned streets of a 5,000-year-old civilization."],
+  ["Gwadar","Balochistan",images.gwadar,"Sculpted headlands and luminous coves along the Makran Coast."],
+  ["Deosai","Gilgit–Baltistan",images.deosai,"An endless high-altitude plain where sky, wildlife and silence prevail."],
+  ["Cholistan Desert","Punjab",images.cholistan,"Golden dunes, nomadic traditions and the monumental Derawar Fort."],
 ] as const;
 
 const regions = [
@@ -52,6 +63,16 @@ const regions = [
  ["Punjab","The historic heartland","Lahore · Multan · Cholistan"], ["Sindh","Civilization beside the Indus","Karachi · Mohenjo-daro"],
  ["Khyber Pakhtunkhwa","Mountain passageways","Swat · Chitral · Peshawar"], ["Balochistan","The untamed frontier","Gwadar · Hingol · Quetta"],
  ["Islamabad","The green capital","Faisal Mosque · Margallas"],
+] as const;
+
+const regionImages = [
+  images.hunza,
+  images.fairy,
+  images.lahore,
+  images.mohenjo,
+  images.swat,
+  images.gwadar,
+  images.islamabad,
 ] as const;
 
 const experiences: ReadonlyArray<[ComponentType<{ className?: string }>, string, string]> = [
@@ -86,7 +107,7 @@ function DiscoverPakistan() {
    <section id="destinations" className="px-5 py-24 lg:px-10 lg:py-36"><div className="reveal mx-auto mb-14 flex max-w-[1500px] flex-col justify-between gap-6 md:flex-row md:items-end"><div><p className="mb-4 text-xs uppercase tracking-[.3em] text-primary">Twelve remarkable worlds</p><h2 className="font-display text-5xl md:text-7xl">Choose your horizon.</h2></div><p className="max-w-md text-sm leading-7 text-muted-foreground">Journey from glacial valleys to old cities, from the high plateau to the Arabian Sea.</p></div>
    <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">{destinations.map(([name,loc,img,desc],i)=><article className={`reveal group relative overflow-hidden rounded-lg ${i===0||i===7?"md:col-span-2 lg:col-span-2":""} h-[480px]`} key={name}><img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" src={img} alt={`${name}, ${loc}`}/><div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent"/><div className="absolute inset-x-0 bottom-0 p-7 lg:p-9"><p className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[.25em] text-primary"><MapPin className="h-3 w-3"/>{loc}</p><h3 className="font-display text-4xl">{name}</h3><p className="mt-3 max-w-xl text-sm leading-6 text-foreground/70">{desc}</p><a href="#plan-your-journey" className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[.18em] text-primary">Discover more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1"/></a></div></article>)}</div></section>
 
-   <section className="border-y border-border bg-card/40 px-5 py-24 lg:px-10 lg:py-32"><div className="mx-auto grid max-w-[1500px] gap-16 lg:grid-cols-[.9fr_1.1fr]"><div className="reveal"><p className="mb-4 text-xs uppercase tracking-[.3em] text-primary">Explore the regions</p><h2 className="font-display text-5xl md:text-7xl">One Country.<br/><span className="italic text-primary">A Thousand Worlds.</span></h2><div className="mt-10 border-t border-border">{regions.map((r,i)=><button onMouseEnter={()=>setRegion(i)} onClick={()=>setRegion(i)} className={`flex w-full items-center justify-between border-b border-border py-4 text-left transition-colors ${region===i?"text-primary":"text-muted-foreground hover:text-foreground"}`} key={r[0]}><span>{String(i+1).padStart(2,"0")} &nbsp; {r[0]}</span><ChevronRight className="h-4 w-4"/></button>)}</div></div><div className="reveal relative min-h-[600px] overflow-hidden rounded-lg"><img className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700" src={destinations[region]?.[2] ?? images.hunza} alt={regions[region]?.[0] ?? "Pakistan region"}/><div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"/><div className="absolute bottom-0 p-8"><p className="text-xs uppercase tracking-[.25em] text-primary">{regions[region]?.[1] ?? "Discover Pakistan"}</p><h3 className="mt-2 font-display text-5xl">{regions[region]?.[0] ?? "Pakistan"}</h3><p className="mt-3 text-muted-foreground">{regions[region]?.[2] ?? "Explore remarkable destinations"}</p></div></div></div></section>
+   <section className="border-y border-border bg-card/40 px-5 py-24 lg:px-10 lg:py-32"><div className="mx-auto grid max-w-[1500px] gap-16 lg:grid-cols-[.9fr_1.1fr]"><div className="reveal"><p className="mb-4 text-xs uppercase tracking-[.3em] text-primary">Explore the regions</p><h2 className="font-display text-5xl md:text-7xl">One Country.<br/><span className="italic text-primary">A Thousand Worlds.</span></h2><div className="mt-10 border-t border-border">{regions.map((r,i)=><button onMouseEnter={()=>setRegion(i)} onClick={()=>setRegion(i)} className={`flex w-full items-center justify-between border-b border-border py-4 text-left transition-colors ${region===i?"text-primary":"text-muted-foreground hover:text-foreground"}`} key={r[0]}><span>{String(i+1).padStart(2,"0")} &nbsp; {r[0]}</span><ChevronRight className="h-4 w-4"/></button>)}</div></div><div className="reveal relative min-h-[600px] overflow-hidden rounded-lg"><img className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700" src={regionImages[region] ?? images.hunza} alt={regions[region]?.[0] ?? "Pakistan region"}/><div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"/><div className="absolute bottom-0 p-8"><p className="text-xs uppercase tracking-[.25em] text-primary">{regions[region]?.[1] ?? "Discover Pakistan"}</p><h3 className="mt-2 font-display text-5xl">{regions[region]?.[0] ?? "Pakistan"}</h3><p className="mt-3 text-muted-foreground">{regions[region]?.[2] ?? "Explore remarkable destinations"}</p></div></div></div></section>
 
    <section id="experiences" className="px-5 py-24 lg:px-10 lg:py-36"><div className="reveal mx-auto max-w-[1500px]"><p className="text-xs uppercase tracking-[.3em] text-primary">Curated experiences</p><h2 className="mt-4 max-w-4xl font-display text-5xl md:text-7xl">Experience Pakistan<br/><span className="italic">Beyond the Ordinary.</span></h2></div><div className="mx-auto mt-14 grid max-w-[1500px] gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3">{experiences.map(([Icon,title,text])=><article className="reveal group bg-card p-8 transition-colors hover:bg-secondary/70 lg:p-10" key={title}><Icon className="mb-12 h-7 w-7 text-primary"/><h3 className="font-display text-3xl">{title}</h3><p className="mt-4 text-sm leading-7 text-muted-foreground">{text}</p><ArrowRight className="mt-7 h-5 w-5 text-primary transition-transform group-hover:translate-x-2"/></article>)}</div></section>
 
