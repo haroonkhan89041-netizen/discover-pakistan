@@ -6,10 +6,6 @@ import {
   Search, Mail, Clock, ShieldCheck
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hunzaAsset from "@/assets/hunza.jpg.asset.json";
-import lakeAsset from "@/assets/lake.jpg.asset.json";
-import skarduAsset from "@/assets/skardu.jpg.asset.json";
-import fairyAsset from "@/assets/fairy.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,8 +26,10 @@ const commons = (file: string) =>
   `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}`;
 
 const images = {
-  hunza: hunzaAsset.url,
-  lake: lakeAsset.url,
+  // All imagery is served from stable public Wikimedia Commons URLs.
+  // This avoids the old Lovable-only /__l5e asset paths that do not exist on Vercel.
+  hunza: commons("Passu Cones - Hunza Valley Pakistan.jpg"),
+  lake: commons("In the middle of Attabad Lake, Hunza Valley, Pakistan. Passu cones in the background.jpg"),
   skardu: commons("Skardu , Pakistan.jpg"),
   fairy: commons("Fairy Meadows, Pakistan.jpg"),
   swat: commons("Swat Valley - Pakistan.jpg"),
@@ -43,7 +41,7 @@ const images = {
   gwadar: commons("Gwadar, Balochistan.jpg"),
   deosai: commons("Deosai Pakistan.jpg"),
   cholistan: commons("Derawar Fort Cholistan.jpg"),
-  peaks: skarduAsset.url,
+  peaks: commons("Passu Cones and the Hunza River.jpg"),
   desert: commons("Cholistan pakistan.jpg"),
 };
 
