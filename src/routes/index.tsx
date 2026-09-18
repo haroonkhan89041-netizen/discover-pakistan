@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 const images = {
-  // Each destination uses its own location-specific image source/query asset.
+  // Location-specific editorial imagery: each destination gets a visual matching its identity.
   hunza: "https://images.unsplash.com/photo-1753696252683-8e4d81bbc560?auto=format&fit=crop&w=2400&q=88",
   lake: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=88",
   skardu: "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?auto=format&fit=crop&w=2400&q=88",
