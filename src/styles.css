@@ -207,4 +207,28 @@ button:active, a:active { transform: scale(.98); }
 @media (max-width: 767px) {
   .gallery-frame:hover img { transform: scale(1.025); }
 }
+/* Luxury experience cards */
+.experience-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid oklch(1 0 0 / 9%);
+  background: linear-gradient(145deg, oklch(.2 .025 165 / 72%), oklch(.11 .018 165 / 82%));
+  box-shadow: 0 28px 80px oklch(0 0 0 / 18%);
+}
+.experience-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 80% 10%, oklch(.78 .12 85 / 10%), transparent 38%);
+  opacity: .7;
+  transition: opacity .6s ease, transform .8s ease;
+}
+.experience-card:hover::before { opacity: 1; transform: scale(1.08); }
+.experience-card:hover { border-color: oklch(.78 .12 85 / 25%); box-shadow: 0 34px 100px oklch(0 0 0 / 28%); }
+.experience-card .experience-icon {
+  transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .4s ease;
+}
+.experience-card:hover .experience-icon { transform: translateY(-4px) scale(1.06); opacity: 1; }
 
