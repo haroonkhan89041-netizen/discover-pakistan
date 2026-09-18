@@ -88,7 +88,7 @@ const experiences: ReadonlyArray<[ComponentType<{ className?: string }>, string,
 
 const cultureImages: ReadonlyArray<readonly [string, string]> = [
   [images.lahore,"Traditional architecture"],
-  [images.food ?? images.lake,"A table made for sharing"],
+  [images.lake,"A table made for sharing"],
   [images.lahore,"Mughal artistry"],
   [images.desert,"Desert traditions"],
   [images.karachi,"Modern expression"],
