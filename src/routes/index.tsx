@@ -46,18 +46,18 @@ const images = {
 };
 
 const destinations = [
-  ["Hunza Valley","Gilgit–Baltistan",images.hunza,"Turquoise waters, storied forts and the cathedral peaks of the Karakoram."],
-  ["Skardu","Gilgit–Baltistan",images.skardu,"A sublime gateway to high mountains, alpine lakes and vast cold deserts."],
-  ["Fairy Meadows","Gilgit–Baltistan",images.fairy,"Wildflower meadows beneath the immense, silent face of Nanga Parbat."],
-  ["Swat Valley","Khyber Pakhtunkhwa",images.swat,"Emerald forests, crystalline rivers and timeless mountain villages."],
-  ["Lahore","Punjab",images.lahore,"Mughal grandeur, legendary cuisine and a city alive with colour."],
-  ["Islamabad","Federal Capital",images.islamabad,"Modern elegance framed by the green folds of the Margalla Hills."],
-  ["Karachi","Sindh",images.karachi,"A coastal metropolis where commerce, culture and the sea meet."],
+  ["Hunza Valley","Gilgit-Baltistan",images.hunza,"Turquoise waters, storied forts and the cathedral peaks of the Karakoram."],
+  ["Skardu","Gilgit-Baltistan",images.skardu,"A sublime gateway to high mountains, alpine lakes, and vast cold deserts."],
+  ["Fairy Meadows","Gilgit-Baltistan",images.fairy,"Wildflower meadows beneath the immense, silent face of Nanga Parbat."],
+  ["Swat Valley","Khyber Pakhtunkhwa",images.swat,"Emerald forests, crystalline rivers, and timeless mountain villages."],
+  ["Lahore","Punjab",images.lahore,"Mughal grandeur, legendary cuisine, and a city alive with colour."],
+  ["Islamabad","Islamabad Capital Territory",images.islamabad,"Modern elegance framed by the green folds of the Margalla Hills."],
+  ["Karachi","Sindh",images.karachi,"A coastal metropolis where commerce, culture, and the sea meet."],
   ["Multan","Punjab",images.shahRukn,"The City of Saints, wrapped in blue tilework and centuries of history."],
   ["Mohenjo-daro","Sindh",images.mohenjo,"Walk the remarkably planned streets of a 5,000-year-old civilization."],
   ["Gwadar","Balochistan",images.gwadar,"Sculpted headlands and luminous coves along the Makran Coast."],
-  ["Deosai","Gilgit–Baltistan",images.deosai,"An immense high-altitude plain where sky, wildlife and silence prevail."],
-  ["Cholistan Desert","Punjab",images.cholistan,"Golden dunes, desert traditions and the monumental Derawar Fort."],
+  ["Deosai","Gilgit-Baltistan",images.deosai,"An immense high-altitude plain where sky, wildlife, and silence prevail."],
+  ["Cholistan Desert","Punjab",images.cholistan,"Golden dunes, desert traditions, and the monumental Derawar Fort."],
 ] as const;
 
 const regions = [
@@ -191,7 +191,7 @@ function DiscoverPakistan() {
             <h1 className="hero-reveal font-display text-[clamp(4.8rem,14vw,13rem)] leading-[.73] tracking-normal">PAKISTAN</h1>
             <h2 className="hero-reveal mt-6 max-w-4xl font-display text-3xl italic leading-[1.08] md:text-6xl">Where Every Horizon Tells a Story.</h2>
             <p className="hero-reveal mt-7 max-w-2xl text-sm leading-7 text-foreground/75 md:text-base">
-              From the world's highest mountains to ancient civilizations, from vibrant cities to untouched coastlines — discover a land of extraordinary beauty.
+              From the world’s highest mountains to ancient civilizations, vibrant cities, and untouched coastlines — discover a land of extraordinary beauty.
             </p>
             <div className="hero-reveal mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" variant="gold"><a href="#destinations">Explore Pakistan <ArrowRight /></a></Button>
