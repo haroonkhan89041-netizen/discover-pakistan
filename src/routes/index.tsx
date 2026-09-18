@@ -419,16 +419,16 @@ function DiscoverPakistan() {
       </footer>
 
       {selectedDestination && (
-        <div role="dialog" aria-modal="true" aria-label={`${selectedDestination[0]} details`} onClick={() => setSelectedDestination(null)}
+        <div role="dialog" aria-modal="true" aria-labelledby="destination-dialog-title" onClick={() => setSelectedDestination(null)}
           onKeyDown={(e) => { if (e.key === "Escape") setSelectedDestination(null); }}
           tabIndex={-1}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 p-5 backdrop-blur-xl">
           <div onClick={(e) => e.stopPropagation()} className="grid max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-border bg-card md:grid-cols-2">
             <img src={selectedDestination[2]} alt={selectedDestination[0]} className="h-64 w-full object-cover md:h-full" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; }} />
             <div className="relative overflow-y-auto p-8 lg:p-10">
-              <Button aria-label="Close destination details" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setSelectedDestination(null)}><X /></Button>
+              <Button autoFocus aria-label="Close destination details" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setSelectedDestination(null)}><X /></Button>
               <p className="text-xs uppercase tracking-[.25em] text-primary">{selectedDestination[1]}</p>
-              <h2 className="mt-3 pr-10 font-display text-5xl">{selectedDestination[0]}</h2>
+              <h2 id="destination-dialog-title" className="mt-3 pr-10 font-display text-5xl">{selectedDestination[0]}</h2>
               <p className="mt-6 leading-8 text-muted-foreground">{selectedDestination[3]}</p>
               <div className="mt-8 border-t border-border pt-6">
                 <p className="text-xs uppercase tracking-[.2em] text-primary">Explore further</p>
@@ -441,11 +441,11 @@ function DiscoverPakistan() {
       )}
 
       {lightbox && (
-        <div role="dialog" aria-modal="true" aria-label="Enlarged Pakistan gallery image" onClick={() => setLightbox(null)}
+        <div role="dialog" aria-modal="true" aria-labelledby="gallery-dialog-title" onClick={() => setLightbox(null)}
           onKeyDown={(e) => { if (e.key === "Escape") setLightbox(null); }}
           tabIndex={-1}
           className="fixed inset-0 z-[110] flex cursor-zoom-out items-center justify-center bg-background/95 p-5 backdrop-blur-xl">
-          <Button aria-label="Close image" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setLightbox(null)}><X /></Button>
+          <span id="gallery-dialog-title" className="sr-only">Enlarged Pakistan gallery image</span><Button autoFocus aria-label="Close image" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setLightbox(null)}><X /></Button>
           <img className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain" src={lightbox} alt="Pakistan gallery enlarged view" />
         </div>
       )}
