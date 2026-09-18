@@ -175,7 +175,7 @@ function DiscoverPakistan() {
             <Button asChild variant="gold"><a href="#destinations">Explore now <ArrowRight /></a></Button>
           </div>
           <Button aria-label={menu ? "Close menu" : "Open menu"} aria-expanded={menu} aria-controls="mobile-navigation"
-            variant="ghost" size="icon" className="lg:hidden" onClick={() => setMenu(!menu)}>
+            type="button" variant="ghost" size="icon" className="lg:hidden" onClick={() => setMenu(!menu)}>
             {menu ? <X /> : <Menu />}
           </Button>
         </div>
@@ -235,14 +235,14 @@ function DiscoverPakistan() {
           <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map(([name,loc,img,desc], i) => (
               <article className={`reveal premium-hover group relative h-[480px] overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-[0_20px_60px_oklch(0_0_0/16%)] ${i===0||i===7 ? "md:col-span-2 lg:col-span-2" : ""}`} key={name}>
-                <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   src={img} alt={`${name}, ${loc}`} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex flex-col items-center p-7 text-center lg:p-9">
                   <p className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[.25em] text-primary"><MapPin className="h-3 w-3" />{loc}</p>
                   <h3 className="font-display text-4xl">{name}</h3>
                   <p className="mt-3 max-w-xl text-center text-sm leading-6 text-foreground/70">{desc}</p>
-                  <button type="button" onClick={() => openDestination([name,loc,img,desc])}
+                  <button type="button" aria-haspopup="dialog" onClick={() => openDestination([name,loc,img,desc])}
                     className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[.18em] text-primary hover:text-foreground">
                     Discover details <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </button>
@@ -250,6 +250,7 @@ function DiscoverPakistan() {
               </article>
             ))}
           </div>
+          {filtered.length > 0 && <p className="mt-4 text-xs uppercase tracking-[.16em] text-muted-foreground" aria-live="polite">{filtered.length} {filtered.length === 1 ? "destination" : "destinations"} found</p>}
           {filtered.length === 0 && <p className="mx-auto mt-8 max-w-[1500px] text-sm text-muted-foreground">No destination matched your search. Try “Hunza”, “Punjab”, or “mountain”.</p>}
         </section>
 
@@ -260,7 +261,7 @@ function DiscoverPakistan() {
               <h2 className="font-display text-5xl md:text-7xl">One Country.<br /><span className="italic text-primary">A Thousand Worlds.</span></h2>
               <div className="mt-10 border-t border-border">
                 {regions.map((r,i) => (
-                  <button type="button" onMouseEnter={() => setRegion(i)} onClick={() => setRegion(i)}
+                  <button type="button" aria-pressed={region === i} onMouseEnter={() => setRegion(i)} onClick={() => setRegion(i)}
                     className={`flex w-full items-center justify-between border-b border-border py-4 text-center transition-colors ${region===i ? "text-primary" : "text-muted-foreground hover:text-foreground"}`} key={r[0]}>
                     <span>{String(i+1).padStart(2,"0")} &nbsp; {r[0]}</span><ChevronRight className="h-4 w-4" />
                   </button>
@@ -268,7 +269,7 @@ function DiscoverPakistan() {
               </div>
             </div>
             <div className="reveal relative min-h-[600px] overflow-hidden rounded-lg">
-              <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
+              <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
                 src={regionImages[region]} alt={regions[region]?.[0] ?? "Pakistan region"} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 p-8">
@@ -305,7 +306,7 @@ function DiscoverPakistan() {
             </div>
             <div className="mt-14 grid h-[700px] grid-cols-2 grid-rows-3 gap-3 md:grid-cols-4 md:grid-rows-2">
               {cultureImages.map(([src,cap],i) => (
-                <figure role="button" tabIndex={0} aria-label={`Enlarge ${cap}`} onClick={() => setLightbox(src)}
+                <figure role="button" tabIndex={0} aria-haspopup="dialog" aria-label={`Enlarge ${cap}`} onClick={() => setLightbox(src)}
                   onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLightbox(src); } }}
                   className={`group relative cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${i===0 ? "row-span-2 md:col-span-2" : ""}`} key={cap}>
                   <img loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={src} alt={cap} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
@@ -351,7 +352,7 @@ function DiscoverPakistan() {
           <div className="reveal mx-auto mb-14 max-w-[1500px] text-center"><p className="text-xs uppercase tracking-[.3em] text-primary">A visual journey</p><h2 className="mt-4 font-display text-5xl md:text-7xl">Infinite Pakistan.</h2></div>
           <div className="mx-auto columns-1 gap-3 space-y-3 md:columns-2 lg:columns-3 max-w-[1500px]">
             {destinations.slice(0,9).map(([name,,img],i) => (
-              <figure role="button" tabIndex={0} aria-label={`Enlarge ${name} image`} onClick={() => setLightbox(img)}
+              <figure role="button" tabIndex={0} aria-haspopup="dialog" aria-label={`Enlarge ${name} image`} onClick={() => setLightbox(img)}
                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLightbox(img); } }}
                 className="reveal premium-hover group relative cursor-zoom-in break-inside-avoid overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" key={`${name}-gallery`}>
                 <img loading="lazy" className={`cinematic-image w-full object-cover transition-transform duration-700 group-hover:scale-105 ${i%3===0 ? "h-[520px]" : "h-[340px]"}`} src={img} alt={name} />
