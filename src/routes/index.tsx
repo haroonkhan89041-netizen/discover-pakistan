@@ -179,7 +179,7 @@ function DiscoverPakistan() {
       <main>
         <section id="home" className="grain relative flex min-h-[96svh] items-end overflow-hidden pb-20 pt-32">
           <img className="hero-bg cinematic-image absolute -inset-y-[18%] h-[136%] w-full object-cover" src={images.hunza}
-            alt="Passu Cones rising above Hunza Valley" fetchPriority="high" />
+            alt="Pakistan mountain landscape" fetchPriority="high" onError={(e) => { e.currentTarget.style.display = "none"; }} />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/20" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
           <div className="relative mx-auto w-full max-w-[1500px] px-5 lg:px-10">
@@ -218,7 +218,7 @@ function DiscoverPakistan() {
             {filtered.map(([name,loc,img,desc], i) => (
               <article className={`reveal premium-hover group relative h-[480px] overflow-hidden rounded-lg ${i===0||i===7 ? "md:col-span-2 lg:col-span-2" : ""}`} key={name}>
                 <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  src={img} alt={`${name}, ${loc}`} />
+                  src={img} alt={`${name}, ${loc}`} onError={(e) => { e.currentTarget.style.display = "none"; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-7 lg:p-9">
                   <p className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[.25em] text-primary"><MapPin className="h-3 w-3" />{loc}</p>
@@ -251,7 +251,7 @@ function DiscoverPakistan() {
             </div>
             <div className="reveal relative min-h-[600px] overflow-hidden rounded-lg">
               <img className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
-                src={regionImages[region]} alt={regions[region]?.[0] ?? "Pakistan region"} />
+                src={regionImages[region]} alt={regions[region]?.[0] ?? "Pakistan region"} onError={(e) => { e.currentTarget.style.display = "none"; }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 p-8">
                 <p className="text-xs uppercase tracking-[.25em] text-primary">{regions[region]?.[1]}</p>
@@ -288,7 +288,7 @@ function DiscoverPakistan() {
             <div className="mt-14 grid h-[700px] grid-cols-2 grid-rows-3 gap-3 md:grid-cols-4 md:grid-rows-2">
               {cultureImages.map(([src,cap],i) => (
                 <figure onClick={() => setLightbox(src)} className={`group relative cursor-zoom-in overflow-hidden rounded-lg ${i===0 ? "row-span-2 md:col-span-2" : ""}`} key={cap}>
-                  <img loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={src} alt={cap} />
+                  <img loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={src} alt={cap} onError={(e) => { e.currentTarget.style.display = "none"; }} />
                   <figcaption className="absolute bottom-0 p-5 text-xs uppercase tracking-[.18em] opacity-0 transition-opacity group-hover:opacity-100">{cap}</figcaption>
                 </figure>
               ))}
@@ -304,7 +304,7 @@ function DiscoverPakistan() {
             <div className="mt-14 flex snap-x gap-4 overflow-x-auto pb-7">
               {heritage.map(([year,name,img]) => (
                 <article className="group relative h-[460px] min-w-[310px] snap-center overflow-hidden rounded-lg md:min-w-[390px]" key={name}>
-                  <img className="cinematic-image h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={img} alt={name} loading="lazy" />
+                  <img className="cinematic-image h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={img} alt={name} loading="lazy" onError={(e) => { e.currentTarget.style.display = "none"; }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                   <div className="absolute bottom-0 p-7"><p className="text-xs tracking-[.25em] text-primary">{year}</p><h3 className="mt-2 font-display text-3xl">{name}</h3></div>
                 </article>
@@ -314,7 +314,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="cinematic" className="grain relative flex min-h-[90svh] items-center justify-center overflow-hidden">
-          <img className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" loading="lazy" />
+          <img className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" loading="lazy" onError={(e) => { e.currentTarget.style.display = "none"; }} />
           <div className="absolute inset-0 bg-background/45" />
           <h2 className="reveal relative text-center font-display text-6xl md:text-9xl">See Pakistan<br /><span className="italic text-primary">Differently.</span></h2>
         </section>
@@ -340,7 +340,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="plan-your-journey" className="relative flex min-h-[75svh] items-center px-5 py-24 lg:px-10">
-          <img className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Boat crossing Attabad Lake" loading="lazy" />
+          <img className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Boat crossing Attabad Lake" loading="lazy" onError={(e) => { e.currentTarget.style.display = "none"; }} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/65 to-transparent" />
           <div className="reveal relative mx-auto w-full max-w-[1500px]">
             <p className="text-xs uppercase tracking-[.3em] text-primary">The horizon is calling</p>
