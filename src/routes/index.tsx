@@ -72,7 +72,7 @@ const regions = [
 ] as const;
 
 const regionImages = [
-  images.hunza, "https://i.dawn.com/primary/2015/06/5588b1f5e72a6.jpg?r=1508961061", images.lahore, images.mohenjo,
+  images.hunza, "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Azad_Kashmir_-_Neelum_Valley.jpg/1280px-Azad_Kashmir_-_Neelum_Valley.jpg", images.lahore, images.mohenjo,
   images.swat, images.gwadar, images.islamabad,
 ] as const;
 
