@@ -243,3 +243,22 @@ button:active, a:active { transform: scale(.98); }
     line-height: 1.02;
   }
 }
+
+
+/* Accessibility and touch polish */
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+button, a { touch-action: manipulation; }
+@media (max-width: 767px) {
+  header > div { min-height: 4.5rem; height: 4.5rem; }
+  header img { max-height: 2.75rem; }
+  #destinations .grid article { height: 440px; }
+  #destinations .grid article > div:last-child { padding: 1.25rem; }
+  #destinations .grid article h3 { font-size: clamp(1.8rem, 8vw, 2.35rem); }
+  #destinations .grid article button { min-height: 44px; padding-inline: .5rem; }
+  #culture figure figcaption { opacity: 1; background: linear-gradient(to top, oklch(0 0 0 / 68%), transparent); width: 100%; }
+  #heritage .overflow-x-auto { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 420px) {
+  #destinations .grid article { height: 430px; }
+  #destinations .grid article p { font-size: .82rem; }
+}
