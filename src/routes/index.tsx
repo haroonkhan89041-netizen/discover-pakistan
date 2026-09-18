@@ -448,7 +448,7 @@ function DiscoverPakistan() {
           <div onClick={(e) => e.stopPropagation()} className="grid max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-border bg-card shadow-[0_30px_100px_oklch(0_0_0/45%)] md:grid-cols-2">
             <img src={selectedDestination[2]} alt={selectedDestination[0]} className="h-64 w-full object-cover md:h-full" loading="lazy" decoding="async" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; }} />
             <div className="relative overflow-y-auto p-8 lg:p-10">
-              <Button autoFocus aria-label="Close destination details" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setSelectedDestination(null)}><X /></Button>
+              <Button type="button" autoFocus aria-label="Close destination details" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setSelectedDestination(null)}><X /></Button>
               <p className="text-xs uppercase tracking-[.25em] text-primary">{selectedDestination[1]}</p>
               <h2 id="destination-dialog-title" className="mt-3 pr-10 font-display text-5xl">{selectedDestination[0]}</h2>
               <p id="destination-dialog-description" className="mt-6 leading-8 text-muted-foreground">{selectedDestination[3]}</p>
@@ -467,7 +467,7 @@ function DiscoverPakistan() {
           onKeyDown={(e) => { if (e.key === "Escape") setLightbox(null); }}
           tabIndex={-1}
           className="fixed inset-0 z-[110] flex cursor-zoom-out items-center justify-center bg-background/95 p-5 backdrop-blur-xl">
-          <span id="gallery-dialog-title" className="sr-only">Enlarged Pakistan gallery image</span><Button autoFocus aria-label="Close image" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setLightbox(null)}><X /></Button>
+          <span id="gallery-dialog-title" className="sr-only">Enlarged Pakistan gallery image</span><Button type="button" autoFocus aria-label="Close image" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setLightbox(null)}><X /></Button>
           <img onClick={(e) => e.stopPropagation()} className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain shadow-[0_30px_100px_oklch(0_0_0/45%)]" src={lightbox} alt="Pakistan gallery enlarged view" />
         </div>
       )}
