@@ -432,7 +432,17 @@ function DiscoverPakistan() {
 
       {selectedDestination && (
         <div role="dialog" aria-modal="true" aria-labelledby="destination-dialog-title" aria-describedby="destination-dialog-description" onClick={() => setSelectedDestination(null)}
-          onKeyDown={(e) => { if (e.key === "Escape") setSelectedDestination(null); }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setSelectedDestination(null);
+            if (e.key === "Tab") {
+              const focusable = e.currentTarget.querySelectorAll<HTMLElement>('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+              if (!focusable.length) return;
+              const first = focusable[0];
+              const last = focusable[focusable.length - 1];
+              if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+              else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+          }}
           tabIndex={-1}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 p-5 backdrop-blur-xl">
           <div onClick={(e) => e.stopPropagation()} className="grid max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-border bg-card shadow-[0_30px_100px_oklch(0_0_0/45%)] md:grid-cols-2">
