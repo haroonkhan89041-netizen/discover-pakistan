@@ -157,6 +157,7 @@ function DiscoverPakistan() {
     `${name} ${loc} ${desc}`.toLowerCase().includes(query.toLowerCase())
   );
   const close = () => setMenu(false);
+  const openDestination = (destination: (typeof destinations)[number]) => setSelectedDestination(destination);
 
   return (
     <div ref={root} className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
@@ -241,7 +242,7 @@ function DiscoverPakistan() {
                   <p className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[.25em] text-primary"><MapPin className="h-3 w-3" />{loc}</p>
                   <h3 className="font-display text-4xl">{name}</h3>
                   <p className="mt-3 max-w-xl text-center text-sm leading-6 text-foreground/70">{desc}</p>
-                  <button type="button" onClick={() => setSelectedDestination([name,loc,img,desc])}
+                  <button type="button" onClick={() => openDestination([name,loc,img,desc])}
                     className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[.18em] text-primary hover:text-foreground">
                     Discover details <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </button>
@@ -425,7 +426,7 @@ function DiscoverPakistan() {
       </footer>
 
       {selectedDestination && (
-        <div role="dialog" aria-modal="true" aria-labelledby="destination-dialog-title" onClick={() => setSelectedDestination(null)}
+        <div role="dialog" aria-modal="true" aria-labelledby="destination-dialog-title" aria-describedby="destination-dialog-description" onClick={() => setSelectedDestination(null)}
           onKeyDown={(e) => { if (e.key === "Escape") setSelectedDestination(null); }}
           tabIndex={-1}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 p-5 backdrop-blur-xl">
@@ -435,7 +436,7 @@ function DiscoverPakistan() {
               <Button autoFocus aria-label="Close destination details" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setSelectedDestination(null)}><X /></Button>
               <p className="text-xs uppercase tracking-[.25em] text-primary">{selectedDestination[1]}</p>
               <h2 id="destination-dialog-title" className="mt-3 pr-10 font-display text-5xl">{selectedDestination[0]}</h2>
-              <p className="mt-6 leading-8 text-muted-foreground">{selectedDestination[3]}</p>
+              <p id="destination-dialog-description" className="mt-6 leading-8 text-muted-foreground">{selectedDestination[3]}</p>
               <div className="mt-8 border-t border-border pt-6">
                 <p className="text-xs uppercase tracking-[.2em] text-primary">Explore further</p>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">Use this destination as a starting point, then explore the regions, experiences and heritage stories across Pakistan.</p>
