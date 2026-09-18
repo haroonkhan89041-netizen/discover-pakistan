@@ -193,14 +193,14 @@ function DiscoverPakistan() {
             alt="Pakistan mountain landscape" fetchPriority="high" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/20" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
-          <div className="relative mx-auto w-full max-w-[1500px] px-5 lg:px-10">
+          <div className="relative mx-auto flex w-full max-w-[1500px] flex-col items-center px-5 text-center lg:px-10">
             <p className="hero-reveal mb-5 text-xs uppercase tracking-[.4em] text-primary">The land of extraordinary</p>
             <h1 className="hero-reveal font-display text-[clamp(4.8rem,14vw,13rem)] leading-[.73] tracking-normal">PAKISTAN</h1>
             <h2 className="hero-reveal mt-6 max-w-4xl font-display text-3xl italic leading-[1.08] md:text-6xl">Where Every Horizon Tells a Story.</h2>
-            <p className="hero-reveal mt-7 max-w-2xl text-sm leading-7 text-foreground/75 md:text-base">
+            <p className="hero-reveal mt-7 max-w-2xl text-center text-sm leading-7 text-foreground/75 md:text-base">
               From some of the world’s highest mountains to ancient civilizations, vibrant cities, and dramatic coastlines — discover a land of extraordinary beauty.
             </p>
-            <div className="hero-reveal mt-9 flex flex-wrap gap-3">
+            <div className="hero-reveal mt-9 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" variant="gold"><a href="#destinations">Explore Pakistan <ArrowRight /></a></Button>
               <Button asChild size="lg" variant="glass"><a href="#cinematic"><Play /> Watch the journey</a></Button>
             </div>
@@ -231,10 +231,10 @@ function DiscoverPakistan() {
                 <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   src={img} alt={`${name}, ${loc}`} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-7 lg:p-9">
+                <div className="absolute inset-x-0 bottom-0 flex flex-col items-center p-7 text-center lg:p-9">
                   <p className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[.25em] text-primary"><MapPin className="h-3 w-3" />{loc}</p>
                   <h3 className="font-display text-4xl">{name}</h3>
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-foreground/70">{desc}</p>
+                  <p className="mt-3 max-w-xl text-center text-sm leading-6 text-foreground/70">{desc}</p>
                   <button onClick={() => setSelectedDestination([name,loc,img,desc])}
                     className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[.18em] text-primary hover:text-foreground">
                     Discover details <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -280,7 +280,7 @@ function DiscoverPakistan() {
           </div>
           <div className="mx-auto mt-14 grid max-w-[1500px] gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {experiences.map(([Icon,title,text,target]) => (
-              <article className="reveal group bg-card p-8 transition-colors hover:bg-secondary/70 lg:p-10" key={title}>
+              <article className="reveal group flex flex-col items-center bg-card p-8 text-center transition-colors hover:bg-secondary/70 lg:p-10" key={title}>
                 <Icon className="mb-12 h-7 w-7 text-primary" />
                 <h3 className="font-display text-3xl">{title}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{text}</p>
