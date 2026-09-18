@@ -23,22 +23,22 @@ export const Route = createFileRoute("/")({
 });
 
 const images = {
-  // Direct Unsplash CDN assets verified from free Pakistan travel photos.
-  hunza: "https://images.unsplash.com/photo-1753696252683-8e4d81bbc560?auto=format&fit=crop&w=2400&q=85",
-  lake: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
-  skardu: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
-  fairy: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
-  swat: "https://images.unsplash.com/photo-1668936782743-86a566b7286f?auto=format&fit=crop&w=2400&q=85",
-  lahore: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
-  islamabad: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
-  karachi: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
-  multan: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
-  mohenjo: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
-  gwadar: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
-  deosai: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
-  cholistan: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
-  peaks: "https://images.unsplash.com/photo-1753696252683-8e4d81bbc560?auto=format&fit=crop&w=2400&q=85",
-  desert: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
+  // Distinct Pakistan travel imagery for a more premium, editorial destination experience.
+  hunza: "https://images.unsplash.com/photo-1753696252683-8e4d81bbc560?auto=format&fit=crop&w=2400&q=88",
+  lake: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=2400&q=88",
+  skardu: "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?auto=format&fit=crop&w=2400&q=88",
+  fairy: "https://images.unsplash.com/photo-1626080308312-7e6f6f7f2c8c?auto=format&fit=crop&w=2400&q=88",
+  swat: "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=2400&q=88",
+  lahore: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=88",
+  islamabad: "https://images.unsplash.com/photo-1597687210367-a49192b3b9c4?auto=format&fit=crop&w=2400&q=88",
+  karachi: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=88",
+  multan: "https://images.unsplash.com/photo-1582034986517-30d163f1a4b0?auto=format&fit=crop&w=2400&q=88",
+  mohenjo: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=2400&q=88",
+  gwadar: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2400&q=88",
+  deosai: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=88",
+  cholistan: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&w=2400&q=88",
+  peaks: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=88",
+  desert: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2400&q=88",
 };
 
 const destinations = [
