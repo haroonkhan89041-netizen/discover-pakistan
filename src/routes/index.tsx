@@ -151,7 +151,7 @@ function DiscoverPakistan() {
     <div ref={root} className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background/55 shadow-[0_10px_40px_oklch(0_0_0/12%)] backdrop-blur-2xl">
         <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 lg:px-10">
-          <a href="#home" aria-label="Discover Pakistan home" className="flex items-center">
+          <a href="#home" aria-label="Discover Pakistan home" className="flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
             <img src="/discover-pakistan-logo.svg" alt="Discover Pakistan" className="h-12 w-auto" />
           </a>
           <nav aria-label="Main navigation" className="hidden items-center gap-7 text-[11px] uppercase tracking-[.16em] text-muted-foreground lg:flex">
