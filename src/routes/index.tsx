@@ -185,7 +185,7 @@ function DiscoverPakistan() {
           <div className="relative mx-auto w-full max-w-[1500px] px-5 lg:px-10">
             <p className="hero-reveal mb-5 text-xs uppercase tracking-[.4em] text-primary">The land of extraordinary</p>
             <h1 className="hero-reveal font-display text-[clamp(4.8rem,14vw,13rem)] leading-[.73] tracking-normal">PAKISTAN</h1>
-            <h2 className="hero-reveal mt-6 font-display text-3xl italic md:text-6xl">Where Every Horizon Tells a Story.</h2>
+            <h2 className="hero-reveal mt-6 max-w-4xl font-display text-3xl italic leading-[1.08] md:text-6xl">Where Every Horizon Tells a Story.</h2>
             <p className="hero-reveal mt-7 max-w-2xl text-sm leading-7 text-foreground/75 md:text-base">
               From the world's highest mountains to ancient civilizations, from vibrant cities to untouched coastlines — discover a land of extraordinary beauty.
             </p>
