@@ -180,7 +180,7 @@ function DiscoverPakistan() {
           </Button>
         </div>
         {menu && (
-          <nav id="mobile-navigation" aria-label="Mobile navigation" className="grid gap-5 border-t border-border bg-background/95 p-6 backdrop-blur-2xl lg:hidden">
+          <nav id="mobile-navigation" aria-label="Mobile navigation" className="grid gap-5 border-t border-border bg-background/95 p-6 pb-8 backdrop-blur-2xl lg:hidden">
             {["Home","Destinations","Experiences","Culture","Heritage","About","Contact"].map((n) => (
               <a onClick={close} href={`#${n.toLowerCase().replaceAll(" ","-")}`} key={n}>{n}</a>
             ))}
@@ -431,8 +431,8 @@ function DiscoverPakistan() {
           onKeyDown={(e) => { if (e.key === "Escape") setSelectedDestination(null); }}
           tabIndex={-1}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 p-5 backdrop-blur-xl">
-          <div onClick={(e) => e.stopPropagation()} className="grid max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-border bg-card md:grid-cols-2">
-            <img src={selectedDestination[2]} alt={selectedDestination[0]} className="h-64 w-full object-cover md:h-full" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; }} />
+          <div onClick={(e) => e.stopPropagation()} className="grid max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-xl border border-border bg-card shadow-[0_30px_100px_oklch(0_0_0/45%)] md:grid-cols-2">
+            <img src={selectedDestination[2]} alt={selectedDestination[0]} className="h-64 w-full object-cover md:h-full" loading="lazy" decoding="async" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; }} />
             <div className="relative overflow-y-auto p-8 lg:p-10">
               <Button autoFocus aria-label="Close destination details" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setSelectedDestination(null)}><X /></Button>
               <p className="text-xs uppercase tracking-[.25em] text-primary">{selectedDestination[1]}</p>
@@ -454,7 +454,7 @@ function DiscoverPakistan() {
           tabIndex={-1}
           className="fixed inset-0 z-[110] flex cursor-zoom-out items-center justify-center bg-background/95 p-5 backdrop-blur-xl">
           <span id="gallery-dialog-title" className="sr-only">Enlarged Pakistan gallery image</span><Button autoFocus aria-label="Close image" size="icon" variant="glass" className="absolute right-5 top-5" onClick={() => setLightbox(null)}><X /></Button>
-          <img className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain" src={lightbox} alt="Pakistan gallery enlarged view" />
+          <img onClick={(e) => e.stopPropagation()} className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain shadow-[0_30px_100px_oklch(0_0_0/45%)]" src={lightbox} alt="Pakistan gallery enlarged view" />
         </div>
       )}
     </div>
