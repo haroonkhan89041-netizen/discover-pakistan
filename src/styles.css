@@ -178,3 +178,19 @@ button:active, a:active { transform: scale(.98); }
   h1, h2 { letter-spacing: -.035em; }
   .reveal { transform: translateZ(0); }
 }
+
+
+/* Responsive typography and spacing polish */
+@media (max-width: 767px) {
+  section[id] { scroll-margin-top: 4.75rem; }
+  #home h1 { font-size: clamp(3.7rem, 18vw, 6.5rem); line-height: .9; }
+  #home { min-height: 92svh; padding-top: 7rem; padding-bottom: 4rem; }
+  #destinations, #experiences, #culture, #heritage, #about, #contact {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  #plan-your-journey { min-height: 68svh; }
+}
+@media (max-width: 420px) {
+  #home h1 { font-size: clamp(3.35rem, 17.5vw, 5rem); }
+}
