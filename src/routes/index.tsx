@@ -239,7 +239,7 @@ function DiscoverPakistan() {
           <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map(([name,loc,img,desc], i) => (
               <article className={`reveal premium-hover group relative h-[480px] overflow-hidden rounded-lg border border-border/50 bg-card/40 shadow-[0_20px_60px_oklch(0_0_0/16%)] ${i===0||i===7 ? "md:col-span-2 lg:col-span-2" : ""}`} key={name}>
-                <img loading="lazy" decoding="async" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   src={img} alt={`${name}, ${loc}`} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex flex-col items-center p-7 text-center lg:p-9">
@@ -273,7 +273,7 @@ function DiscoverPakistan() {
               </div>
             </div>
             <div className="reveal relative min-h-[600px] overflow-hidden rounded-lg">
-              <img loading="lazy" decoding="async" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
+              <img loading="lazy" decoding="async" className="cinematic-image absolute inset-0 h-full w-full object-cover transition-all duration-700"
                 src={regionImages[region]} alt={regions[region]?.[0] ?? "Pakistan region"} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-0 p-8">
