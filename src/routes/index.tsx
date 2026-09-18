@@ -30,11 +30,11 @@ const images = {
   fairy: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=88",
   swat: "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=2400&q=88",
   lahore: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=88",
-  islamabad: "https://images.unsplash.com/photo-1597687210367-a49192b3b9c4?auto=format&fit=crop&w=2400&q=88",
-  karachi: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=88",
+  islamabad: "https://images.squarespace-cdn.com/content/v1/5919f7bfd2b857811c061c2f/b06f0786-2612-4e5c-8407-b9869ea9ad2b/islamabad-faisal-mosque.jpg",
+  karachi: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/PK_Karachi_asv2020-02_img13_Clifton_Beach.jpg/1200px-PK_Karachi_asv2020-02_img13_Clifton_Beach.jpg",
   multan: "https://images.unsplash.com/photo-1582034986517-30d163f1a4b0?auto=format&fit=crop&w=2400&q=88",
   mohenjo: "https://awsimages.detik.net.id/community/media/visual/2022/12/07/mohenjo-daro-2.jpeg?q=90&w=1200",
-  gwadar: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2400&q=88",
+  gwadar: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Gwadar%2C_Balochistan.jpg",
   deosai: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=88",
   cholistan: "https://guestkor.com/protected/uploads/blogs/derawar-fort-viral-photos60adf374b25dc/9.jpg",
   taxila: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Dharmarajika_stupa%2CTaxila.jpg/1200px-Dharmarajika_stupa%2CTaxila.jpg",
@@ -62,7 +62,7 @@ const destinations = [
 
 const regions = [
   ["Gilgit-Baltistan","The roof of the world","Hunza · Skardu · Deosai"],
-  ["Azad Kashmir","Valleys of rivers and pine","Neelum · Rawalakot"],
+  ["Azad Kashmir","Valleys of rivers and pine","Neelum · Keran · Sharda"],
   ["Punjab","The historic heartland","Lahore · Multan · Cholistan"],
   ["Sindh","Civilization beside the Indus","Karachi · Mohenjo-daro"],
   ["Khyber Pakhtunkhwa","Mountain passageways","Swat · Chitral · Peshawar"],
@@ -71,7 +71,7 @@ const regions = [
 ] as const;
 
 const regionImages = [
-  images.hunza, images.fairy, images.lahore, images.mohenjo,
+  images.hunza, "https://i.dawn.com/primary/2015/06/5588b1f5e72a6.jpg?r=1508961061", images.lahore, images.mohenjo,
   images.swat, images.gwadar, images.islamabad,
 ] as const;
 
