@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
 
 const images = {
   // Location-specific editorial imagery: each destination gets a visual matching its identity.
-  hunza: "https://images.unsplash.com/photo-1753696252683-8e4d81bbc560?auto=format&fit=crop&w=2400&q=88",
+  hunza: "https://www.notouttravel.co.uk/wp-content/uploads/2022/09/Hunza_Valley_Landscape.jpg.webp",
   lake: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=88",
   skardu: "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?auto=format&fit=crop&w=2400&q=88",
   fairy: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=88",
@@ -33,10 +33,14 @@ const images = {
   islamabad: "https://images.unsplash.com/photo-1597687210367-a49192b3b9c4?auto=format&fit=crop&w=2400&q=88",
   karachi: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=88",
   multan: "https://images.unsplash.com/photo-1582034986517-30d163f1a4b0?auto=format&fit=crop&w=2400&q=88",
-  mohenjo: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=2400&q=88",
+  mohenjo: "https://awsimages.detik.net.id/community/media/visual/2022/12/07/mohenjo-daro-2.jpeg?q=90&w=1200",
   gwadar: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2400&q=88",
   deosai: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=88",
-  cholistan: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&w=2400&q=88",
+  cholistan: "https://guestkor.com/protected/uploads/blogs/derawar-fort-viral-photos60adf374b25dc/9.jpg",
+  taxila: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Dharmarajika_stupa%2CTaxila.jpg/1200px-Dharmarajika_stupa%2CTaxila.jpg",
+  makli: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg/1280px-PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg",
+  rohtas: "https://2.bp.blogspot.com/-ZDddF4Tu8gw/WuIeSvemzJI/AAAAAAAAC68/2wF3CJ5-vnw_DHxpzZkxBL6Noco4M73HwCLcBGAs/s1600/Rohtas%2BFort.jpg",
+  shahRukn: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/3840px-Shah_Rukn-e-Alam_Shrine.jpg",
   peaks: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=88",
   desert: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2400&q=88",
 };
@@ -49,7 +53,7 @@ const destinations = [
   ["Lahore","Punjab",images.lahore,"Mughal grandeur, legendary cuisine and a city alive with colour."],
   ["Islamabad","Federal Capital",images.islamabad,"Modern elegance framed by the green folds of the Margalla Hills."],
   ["Karachi","Sindh",images.karachi,"A coastal metropolis where commerce, culture and the sea meet."],
-  ["Multan","Punjab",images.multan,"The City of Saints, wrapped in blue tilework and centuries of history."],
+  ["Multan","Punjab",images.shahRukn,"The City of Saints, wrapped in blue tilework and centuries of history."],
   ["Mohenjo-daro","Sindh",images.mohenjo,"Walk the remarkably planned streets of a 5,000-year-old civilization."],
   ["Gwadar","Balochistan",images.gwadar,"Sculpted headlands and luminous coves along the Makran Coast."],
   ["Deosai","Gilgit–Baltistan",images.deosai,"An immense high-altitude plain where sky, wildlife and silence prevail."],
@@ -81,22 +85,22 @@ const experiences: ReadonlyArray<[ComponentType<{ className?: string }>, string,
 ];
 
 const cultureImages: ReadonlyArray<readonly [string, string]> = [
-  [images.lahore,"Traditional architecture"],
-  [images.lake,"A table made for sharing"],
-  [images.lahore,"Mughal artistry"],
-  [images.desert,"Desert traditions"],
-  [images.karachi,"Modern expression"],
+  [images.lahore,"Lahore Mughal architecture"],
+  [images.hunza,"Hunza mountain culture"],
+  [images.mohenjo,"Mohenjo-daro heritage"],
+  [images.cholistan,"Cholistan desert traditions"],
+  [images.karachi,"Karachi coastal life"],
 ];
 
 const heritage = [
   ["2600 BCE","Indus Valley Civilization",images.mohenjo],
   ["2500 BCE","Mohenjo-daro",images.mohenjo],
-  ["600 BCE","Taxila",images.lahore],
+  ["600 BCE","Taxila",images.taxila],
   ["1526","Mughal Empire",images.lahore],
   ["1566","Lahore Fort",images.lahore],
   ["1673","Badshahi Mosque",images.lahore],
-  ["1541","Rohtas Fort",images.lahore],
-  ["14th C.","Makli Necropolis",images.mohenjo],
+  ["1541","Rohtas Fort",images.rohtas],
+  ["14th C.","Makli Necropolis",images.makli],
 ] as const;
 
 function DiscoverPakistan() {
