@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
 
 const images = {
   // Location-specific editorial imagery: each destination gets a visual matching its identity.
-  hunza: "https://www.notouttravel.co.uk/wp-content/uploads/2022/09/Hunza_Valley_Landscape.jpg.webp",
+  hunza: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1280px-Hunza_Valley%2C_Pakistan.jpg",
   lake: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=88",
-  skardu: "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?auto=format&fit=crop&w=2400&q=88",
+  skardu: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Skardu%2C_Pakistan.jpg/1280px-Skardu%2C_Pakistan.jpg",
   fairy: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=88",
   swat: "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=2400&q=88",
   lahore: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=88",
@@ -37,10 +37,10 @@ const images = {
   mohenjo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mohenjo-daro.jpg/1280px-Mohenjo-daro.jpg",
   gwadar: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Gwadar%2C_Balochistan.jpg",
   deosai: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=88",
-  cholistan: "https://guestkor.com/protected/uploads/blogs/derawar-fort-viral-photos60adf374b25dc/9.jpg",
+  cholistan: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg/1280px-Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg",
   taxila: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Dharmarajika_stupa%2CTaxila.jpg/1200px-Dharmarajika_stupa%2CTaxila.jpg",
-  makli: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg/1280px-PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg",
-  rohtas: "https://2.bp.blogspot.com/-ZDddF4Tu8gw/WuIeSvemzJI/AAAAAAAAC68/2wF3CJ5-vnw_DHxpzZkxBL6Noco4M73HwCLcBGAs/s1600/Rohtas%2BFort.jpg",
+  makli: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg/1280px-PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg",
+  rohtas: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Rohtas_Fort.jpg/1280px-Rohtas_Fort.jpg",
   shahRukn: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/3840px-Shah_Rukn-e-Alam_Shrine.jpg",
   peaks: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=88",
   desert: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2400&q=88",
