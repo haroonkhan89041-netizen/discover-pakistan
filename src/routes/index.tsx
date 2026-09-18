@@ -128,10 +128,10 @@ function DiscoverPakistan() {
   }, []);
 
   useEffect(() => {
-    const locked = Boolean(lightbox || selectedDestination);
+    const locked = Boolean(menu || lightbox || selectedDestination);
     document.body.style.overflow = locked ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [lightbox, selectedDestination]);
+  }, [menu, lightbox, selectedDestination]);
 
   useEffect(() => {
     let ctx: { revert: () => void } | undefined;
@@ -179,7 +179,7 @@ function DiscoverPakistan() {
           </Button>
         </div>
         {menu && (
-          <nav id="mobile-navigation" aria-label="Mobile navigation" className="grid gap-5 border-t border-border bg-background p-6 lg:hidden">
+          <nav id="mobile-navigation" aria-label="Mobile navigation" className="grid gap-5 border-t border-border bg-background/95 p-6 backdrop-blur-2xl lg:hidden">
             {["Home","Destinations","Experiences","Culture","Heritage","About","Contact"].map((n) => (
               <a onClick={close} href={`#${n.toLowerCase().replaceAll(" ","-")}`} key={n}>{n}</a>
             ))}
@@ -220,7 +220,7 @@ function DiscoverPakistan() {
               <p className="mb-3 text-sm leading-7 text-muted-foreground">Search destinations by name, region or experience.</p>
               <label className="flex items-center gap-3 rounded-md border border-border bg-card/60 px-4 py-3 transition-colors focus-within:border-primary">
                 <Search className="h-4 w-4 shrink-0 text-primary" />
-                <input aria-label="Search destinations" value={query} onChange={(e) => setQuery(e.target.value)}
+                <input type="search" autoComplete="off" aria-label="Search destinations" value={query} onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search Pakistan..." className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground" />
                 {query && (
                   <button type="button" aria-label="Clear destination search" onClick={() => setQuery("")}
@@ -241,7 +241,7 @@ function DiscoverPakistan() {
                   <p className="mb-2 flex items-center gap-2 text-[10px] uppercase tracking-[.25em] text-primary"><MapPin className="h-3 w-3" />{loc}</p>
                   <h3 className="font-display text-4xl">{name}</h3>
                   <p className="mt-3 max-w-xl text-center text-sm leading-6 text-foreground/70">{desc}</p>
-                  <button onClick={() => setSelectedDestination([name,loc,img,desc])}
+                  <button type="button" onClick={() => setSelectedDestination([name,loc,img,desc])}
                     className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[.18em] text-primary hover:text-foreground">
                     Discover details <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </button>
@@ -259,7 +259,7 @@ function DiscoverPakistan() {
               <h2 className="font-display text-5xl md:text-7xl">One Country.<br /><span className="italic text-primary">A Thousand Worlds.</span></h2>
               <div className="mt-10 border-t border-border">
                 {regions.map((r,i) => (
-                  <button onMouseEnter={() => setRegion(i)} onClick={() => setRegion(i)}
+                  <button type="button" onMouseEnter={() => setRegion(i)} onClick={() => setRegion(i)}
                     className={`flex w-full items-center justify-between border-b border-border py-4 text-center transition-colors ${region===i ? "text-primary" : "text-muted-foreground hover:text-foreground"}`} key={r[0]}>
                     <span>{String(i+1).padStart(2,"0")} &nbsp; {r[0]}</span><ChevronRight className="h-4 w-4" />
                   </button>
