@@ -184,3 +184,27 @@ button:active, a:active { transform: scale(.98); }
   h1, h2 { letter-spacing: -.035em; }
   .reveal { transform: translateZ(0); }
 }
+/* Editorial gallery polish */
+.gallery-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid oklch(1 0 0 / 10%);
+  background: oklch(0.16 0.02 165 / 40%);
+  box-shadow: 0 24px 70px oklch(0 0 0 / 22%);
+}
+.gallery-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, oklch(0 0 0 / 0%) 42%, oklch(0 0 0 / 48%) 100%);
+  opacity: .7;
+  transition: opacity .5s ease;
+}
+.gallery-frame:hover::after { opacity: .9; }
+.gallery-frame img { transition: transform 1.2s cubic-bezier(.22,1,.36,1), filter .6s ease; }
+.gallery-frame:hover img { transform: scale(1.055); filter: saturate(1.08) contrast(1.03); }
+@media (max-width: 767px) {
+  .gallery-frame:hover img { transform: scale(1.025); }
+}
+
