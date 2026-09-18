@@ -333,7 +333,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="cinematic" className="grain relative flex min-h-[90svh] items-center justify-center overflow-hidden">
-          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full scale-105 object-cover" src={images.peaks} alt="Dramatic mountain landscape" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-background/45" />
           <h2 className="reveal relative text-center font-display text-6xl md:text-9xl">See Pakistan<br /><span className="italic text-primary">Differently.</span></h2>
         </section>
@@ -361,7 +361,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="plan-your-journey" className="relative flex min-h-[75svh] items-center px-5 py-24 lg:px-10">
-          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Pakistan mountain lake landscape" loading="lazy" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
+          <img loading="lazy" className="cinematic-image absolute inset-0 h-full w-full object-cover" src={images.lake} alt="Pakistan mountain lake landscape" onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/65 to-transparent" />
           <div className="reveal relative mx-auto w-full max-w-[1500px]">
             <p className="text-xs uppercase tracking-[.3em] text-primary">The horizon is calling</p>
