@@ -171,3 +171,16 @@ a, button { -webkit-tap-highlight-color: transparent; }
   html { scroll-padding-top: 4.5rem; }
   .grain::after { opacity:.045; }
 }
+
+/* Final visual polish */
+:root { --page-max: 1500px; }
+section { scroll-margin-top: 5.5rem; }
+a, button { transition: color .3s ease, background-color .3s ease, border-color .3s ease, transform .35s cubic-bezier(.22,1,.36,1), opacity .3s ease; }
+button:active, a:active { transform: scale(.98); }
+@media (min-width: 1024px) {
+  main img { will-change: transform; }
+}
+@media (max-width: 767px) {
+  h1, h2 { letter-spacing: -.035em; }
+  .reveal { transform: translateZ(0); }
+}
