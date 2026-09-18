@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
 const images = {
   // Location-specific editorial imagery: each destination gets a visual matching its identity.
   hunza: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1280px-Hunza_Valley%2C_Pakistan.jpg",
-  lake: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=88",
+  lake: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1600px-Hunza_Valley%2C_Pakistan.jpg",
   skardu: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Skardu%2C_Pakistan.jpg/1280px-Skardu%2C_Pakistan.jpg",
   fairy: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fairy_Meadows_Nanga_parbat_Pakistan.JPG/1280px-Fairy_Meadows_Nanga_parbat_Pakistan.JPG",
   swat: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Mountains_in_Swat_Valley1.jpg/1280px-Mountains_in_Swat_Valley1.jpg",
@@ -42,8 +42,8 @@ const images = {
   makli: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg/1280px-PK_Thatta_asv2020-02_img10_Makli_Necropolis.jpg",
   rohtas: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Rohtas_Fort.jpg/1280px-Rohtas_Fort.jpg",
   shahRukn: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/3840px-Shah_Rukn-e-Alam_Shrine.jpg",
-  peaks: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=88",
-  desert: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2400&q=88",
+  peaks: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Hunza_Valley%2C_Pakistan.jpg/1600px-Hunza_Valley%2C_Pakistan.jpg",
+  desert: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg/1600px-Derawar_Fort%2C_Cholistan_Desert%2C_Pakistan.jpg",
 };
 
 const destinations = [
