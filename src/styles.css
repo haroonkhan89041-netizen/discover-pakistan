@@ -163,6 +163,9 @@ body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; 
 ::selection { background: var(--primary); color: var(--primary-foreground); }
 img { display: block; }
 a, button { -webkit-tap-highlight-color: transparent; }
+@utility premium-hover { transition:transform .6s cubic-bezier(.22,1,.36,1), box-shadow .6s ease, border-color .4s ease; &:hover { transform:translateY(-4px); box-shadow:0 24px 70px oklch(0 0 0 / 22%); } }
+@media (max-width: 767px) { .premium-hover { transform: translateZ(0); } }
+
 /* Final visual polish */
 :root { --page-max: 1500px; }
 section { scroll-margin-top: 5.5rem; }
