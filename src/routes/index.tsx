@@ -211,7 +211,7 @@ function DiscoverPakistan() {
         </section>
 
         <section id="destinations" className="px-5 py-24 lg:px-10 lg:py-36 text-center">
-          <div className="reveal mx-auto mb-14 flex max-w-[1500px] flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="reveal mx-auto mb-14 flex max-w-[1500px] flex-col items-center justify-between gap-6 text-center md:flex-row md:items-end">
             <div>
               <p className="mb-4 text-xs uppercase tracking-[.3em] text-primary">Twelve remarkable worlds</p>
               <h2 className="font-display text-5xl md:text-7xl">Choose your horizon.</h2>
@@ -254,7 +254,7 @@ function DiscoverPakistan() {
               <div className="mt-10 border-t border-border">
                 {regions.map((r,i) => (
                   <button onMouseEnter={() => setRegion(i)} onClick={() => setRegion(i)}
-                    className={`flex w-full items-center justify-between border-b border-border py-4 text-left transition-colors ${region===i ? "text-primary" : "text-muted-foreground hover:text-foreground"}`} key={r[0]}>
+                    className={`flex w-full items-center justify-between border-b border-border py-4 text-center transition-colors ${region===i ? "text-primary" : "text-muted-foreground hover:text-foreground"}`} key={r[0]}>
                     <span>{String(i+1).padStart(2,"0")} &nbsp; {r[0]}</span><ChevronRight className="h-4 w-4" />
                   </button>
                 ))}
@@ -292,7 +292,7 @@ function DiscoverPakistan() {
 
         <section id="culture" className="bg-foreground px-5 py-24 text-background lg:px-10 lg:py-32 text-center">
           <div className="mx-auto max-w-[1500px]">
-            <div className="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div className="reveal flex flex-col items-center justify-between gap-6 text-center md:flex-row md:items-end">
               <div><p className="text-xs uppercase tracking-[.3em] text-accent">A living tapestry</p><h2 className="mt-4 font-display text-5xl md:text-7xl">A Culture Written<br /><span className="italic">in Colour.</span></h2></div>
               <p className="max-w-md text-sm leading-7 opacity-65">Every province speaks in its own textiles, rhythms, recipes and rituals — united by an instinctive warmth.</p>
             </div>
