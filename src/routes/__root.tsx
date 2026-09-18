@@ -21,7 +21,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     { property: "og:description", content: "Where every horizon tells a story." }, { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ], links: [
-    { rel: "stylesheet", href: appCss }, { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    { rel: "stylesheet", href: appCss }, { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     { rel: "preconnect", href: "https://fonts.googleapis.com" }, { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
     { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" },
   ]}), shellComponent: RootShell, component: RootComponent, notFoundComponent: NotFoundComponent, errorComponent: ErrorComponent,
