@@ -262,4 +262,25 @@ button:active, a:active { transform: scale(.98); }
   transition: transform 1s cubic-bezier(.22,1,.36,1);
 }
 .luxury-cta:hover::before { transform: rotate(18deg) translateX(180%); }
+/* Final responsive luxury pass */
+@media (max-width: 1023px) {
+  section { scroll-margin-top: 5rem; }
+  .premium-hover { transform: translateZ(0); }
+}
+@media (max-width: 767px) {
+  section { scroll-margin-top: 4.75rem; }
+  .hero-reveal { max-width: 100%; }
+  .cinematic-image { object-position: center; }
+  .journey-panel::before {
+    background: linear-gradient(180deg, oklch(.02 .01 165 / 38%), oklch(.02 .01 165 / 82%));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-panel img,
+  .gallery-frame img,
+  .experience-card,
+  .experience-card::before,
+  .experience-card .experience-icon,
+  .luxury-cta::before { transition: none !important; }
+}
 
