@@ -128,6 +128,12 @@ function DiscoverPakistan() {
   }, []);
 
   useEffect(() => {
+    const locked = Boolean(lightbox || selectedDestination);
+    document.body.style.overflow = locked ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [lightbox, selectedDestination]);
+
+  useEffect(() => {
     let ctx: { revert: () => void } | undefined;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     void import("gsap").then(({ default: gsap }) =>
@@ -292,7 +298,9 @@ function DiscoverPakistan() {
             </div>
             <div className="mt-14 grid h-[700px] grid-cols-2 grid-rows-3 gap-3 md:grid-cols-4 md:grid-rows-2">
               {cultureImages.map(([src,cap],i) => (
-                <figure onClick={() => setLightbox(src)} className={`group relative cursor-zoom-in overflow-hidden rounded-lg ${i===0 ? "row-span-2 md:col-span-2" : ""}`} key={cap}>
+                <figure role="button" tabIndex={0} aria-label={`Enlarge ${cap}`} onClick={() => setLightbox(src)}
+                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLightbox(src); } }}
+                  className={`group relative cursor-zoom-in overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${i===0 ? "row-span-2 md:col-span-2" : ""}`} key={cap}>
                   <img loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src={src} alt={cap} onError={(e) => { const img = e.currentTarget; img.style.opacity = "0"; img.style.background = "linear-gradient(135deg, oklch(.17 .03 165), oklch(.08 .02 165))"; }} />
                   <figcaption className="absolute bottom-0 p-5 text-xs uppercase tracking-[.18em] opacity-0 transition-opacity group-hover:opacity-100">{cap}</figcaption>
                 </figure>
@@ -336,7 +344,9 @@ function DiscoverPakistan() {
           <div className="reveal mx-auto mb-14 max-w-[1500px] text-center"><p className="text-xs uppercase tracking-[.3em] text-primary">A visual journey</p><h2 className="mt-4 font-display text-5xl md:text-7xl">Infinite Pakistan.</h2></div>
           <div className="mx-auto columns-1 gap-3 space-y-3 md:columns-2 lg:columns-3 max-w-[1500px]">
             {destinations.slice(0,9).map(([name,,img],i) => (
-              <figure onClick={() => setLightbox(img)} className="reveal premium-hover group relative cursor-zoom-in break-inside-avoid overflow-hidden rounded-lg" key={`${name}-gallery`}>
+              <figure role="button" tabIndex={0} aria-label={`Enlarge ${name} image`} onClick={() => setLightbox(img)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLightbox(img); } }}
+                className="reveal premium-hover group relative cursor-zoom-in break-inside-avoid overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" key={`${name}-gallery`}>
                 <img loading="lazy" className={`cinematic-image w-full object-cover transition-transform duration-700 group-hover:scale-105 ${i%3===0 ? "h-[520px]" : "h-[340px]"}`} src={img} alt={name} />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background p-6 pt-20 font-display text-2xl opacity-0 transition-opacity group-hover:opacity-100">{name}</figcaption>
               </figure>
