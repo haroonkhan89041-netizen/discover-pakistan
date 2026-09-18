@@ -22,27 +22,23 @@ export const Route = createFileRoute("/")({
   component: DiscoverPakistan,
 });
 
-const commons = (file: string) =>
-  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}`;
-
 const images = {
-  // All imagery is served from stable public Wikimedia Commons URLs.
-  // This avoids the old Lovable-only /__l5e asset paths that do not exist on Vercel.
-  hunza: commons("Passu Cones - Hunza Valley Pakistan.jpg"),
-  lake: commons("In the middle of Attabad Lake, Hunza Valley, Pakistan. Passu cones in the background.jpg"),
-  skardu: commons("Skardu , Pakistan.jpg"),
-  fairy: commons("Fairy Meadows, Pakistan.jpg"),
-  swat: commons("Swat Valley - Pakistan.jpg"),
-  lahore: commons("BADSHAHI MOSQUE LAHORE.jpg"),
-  islamabad: commons("Faisal mosque islamabad.jpg"),
-  karachi: commons("Karachi sea.jpg"),
-  multan: commons("Shrine Shah Rukn-e-Alam.jpg"),
-  mohenjo: commons("Mohenjodaro.jpg"),
-  gwadar: commons("Gwadar, Balochistan.jpg"),
-  deosai: commons("Deosai Pakistan.jpg"),
-  cholistan: commons("Derawar Fort Cholistan.jpg"),
-  peaks: commons("Passu Cones and the Hunza River.jpg"),
-  desert: commons("Cholistan pakistan.jpg"),
+  // Direct Unsplash CDN assets verified from free Pakistan travel photos.
+  hunza: "https://images.unsplash.com/photo-1753696252683-8e4d81bbc560?auto=format&fit=crop&w=2400&q=85",
+  lake: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
+  skardu: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
+  fairy: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
+  swat: "https://images.unsplash.com/photo-1668936782743-86a566b7286f?auto=format&fit=crop&w=2400&q=85",
+  lahore: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
+  islamabad: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
+  karachi: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
+  multan: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
+  mohenjo: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=85",
+  gwadar: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
+  deosai: "https://images.unsplash.com/photo-1643816608874-385c6544cd98?auto=format&fit=crop&w=2400&q=85",
+  cholistan: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
+  peaks: "https://images.unsplash.com/photo-1753696252683-8e4d81bbc560?auto=format&fit=crop&w=2400&q=85",
+  desert: "https://images.unsplash.com/photo-1506968695017-764f86a9f9ec?auto=format&fit=crop&w=2400&q=85",
 };
 
 const destinations = [
@@ -155,8 +151,8 @@ function DiscoverPakistan() {
     <div ref={root} className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/50 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 lg:px-10">
-          <a href="#home" className="font-display text-lg tracking-[.2em]" aria-label="Discover Pakistan home">
-            DISCOVER <span className="text-primary">PAKISTAN</span>
+          <a href="#home" aria-label="Discover Pakistan home" className="flex items-center">
+            <img src="/discover-pakistan-logo.svg" alt="Discover Pakistan" className="h-12 w-auto" />
           </a>
           <nav aria-label="Main navigation" className="hidden items-center gap-7 text-[11px] uppercase tracking-[.16em] text-muted-foreground lg:flex">
             {["Home","Destinations","Experiences","Culture","Heritage","About","Contact"].map((n) => (
@@ -391,7 +387,7 @@ function DiscoverPakistan() {
       <footer className="border-t border-border px-5 py-16 lg:px-10">
         <div className="mx-auto max-w-[1500px]">
           <div className="flex flex-col justify-between gap-10 md:flex-row">
-            <div><p className="font-display text-2xl tracking-[.15em]">DISCOVER <span className="text-primary">PAKISTAN</span></p><p className="mt-3 font-display italic text-muted-foreground">Where Every Horizon Tells a Story.</p></div>
+            <div><img src="/discover-pakistan-logo.svg" alt="Discover Pakistan" className="h-16 w-auto max-w-full" /><p className="mt-3 font-display italic text-muted-foreground">Where Every Horizon Tells a Story.</p></div>
             <div className="flex flex-wrap gap-x-8 gap-y-4 text-xs uppercase tracking-[.16em] text-muted-foreground">
               {["Explore","Destinations","Experiences","Culture","Heritage","About","Contact"].map(x => <a className="hover:text-primary" href={`#${x.toLowerCase() === "explore" ? "home" : x.toLowerCase()}`} key={x}>{x}</a>)}
             </div>
