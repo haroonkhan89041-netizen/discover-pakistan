@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ComponentType } from "react";
 import {
   ArrowDown, ArrowRight, Compass, Menu, Mountain, Play, X, Waves, Utensils,
-  Landmark, Palette, Instagram, Youtube, Facebook, MapPin, ChevronRight,
-  Search, Mail, Clock, ShieldCheck
+  Landmark, Palette, MapPin, ChevronRight, Search, Mail, Clock, ShieldCheck
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -30,10 +29,12 @@ const images = {
   fairy: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=88",
   swat: "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=2400&q=88",
   lahore: "https://images.unsplash.com/photo-1603491656337-3b491147917c?auto=format&fit=crop&w=2400&q=88",
+  lahoreFort: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Lahore_Fort_Punjab.jpg/1280px-Lahore_Fort_Punjab.jpg",
+  badshahi: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Badshahi_Mosque%2C_Lahore..JPG",
   islamabad: "https://images.squarespace-cdn.com/content/v1/5919f7bfd2b857811c061c2f/b06f0786-2612-4e5c-8407-b9869ea9ad2b/islamabad-faisal-mosque.jpg",
   karachi: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/PK_Karachi_asv2020-02_img13_Clifton_Beach.jpg/1200px-PK_Karachi_asv2020-02_img13_Clifton_Beach.jpg",
   multan: "https://images.unsplash.com/photo-1582034986517-30d163f1a4b0?auto=format&fit=crop&w=2400&q=88",
-  mohenjo: "https://awsimages.detik.net.id/community/media/visual/2022/12/07/mohenjo-daro-2.jpeg?q=90&w=1200",
+  mohenjo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mohenjo-daro.jpg/1280px-Mohenjo-daro.jpg",
   gwadar: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Gwadar%2C_Balochistan.jpg",
   deosai: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=88",
   cholistan: "https://guestkor.com/protected/uploads/blogs/derawar-fort-viral-photos60adf374b25dc/9.jpg",
@@ -75,17 +76,17 @@ const regionImages = [
   images.swat, images.gwadar, images.islamabad,
 ] as const;
 
-const experiences: ReadonlyArray<[ComponentType<{ className?: string }>, string, string]> = [
-  [Mountain,"Mountain Adventures","Explore the Karakoram, Himalayas and Hindu Kush."],
-  [Landmark,"Ancient Heritage","Discover civilizations thousands of years old."],
-  [Utensils,"Pakistani Cuisine","Taste regional dishes, spices and traditions passed down through generations."],
-  [Compass,"Architecture & History","Enter mosques, forts, shrines and Mughal masterpieces."],
-  [Waves,"Coastal Escapes","Discover beaches, headlands and fishing communities along the Arabian Sea."],
-  [Palette,"Art & Culture","Meet music, crafts, textiles, traditions and generous hospitality."],
+const experiences: ReadonlyArray<[ComponentType<{ className?: string }>, string, string, string]> = [
+  [Mountain,"Mountain Adventures","Explore the Karakoram, Himalayas and Hindu Kush.","destinations"],
+  [Landmark,"Ancient Heritage","Discover civilizations thousands of years old.","heritage"],
+  [Utensils,"Pakistani Cuisine","Taste regional dishes, spices and traditions passed down through generations.","culture"],
+  [Compass,"Architecture & History","Enter mosques, forts, shrines and Mughal masterpieces.","heritage"],
+  [Waves,"Coastal Escapes","Discover beaches, headlands and fishing communities along the Arabian Sea.","destinations"],
+  [Palette,"Art & Culture","Meet music, crafts, textiles, traditions and generous hospitality.","culture"],
 ];
 
 const cultureImages: ReadonlyArray<readonly [string, string]> = [
-  [images.lahore,"Lahore Mughal architecture"],
+  [images.lahoreFort,"Lahore Fort, Lahore"],
   [images.hunza,"Hunza mountain culture"],
   [images.mohenjo,"Mohenjo-daro heritage"],
   [images.cholistan,"Cholistan desert traditions"],
@@ -96,11 +97,11 @@ const heritage = [
   ["2600 BCE","Indus Valley Civilization",images.mohenjo],
   ["2500 BCE","Mohenjo-daro",images.mohenjo],
   ["600 BCE","Taxila",images.taxila],
-  ["1526","Mughal Empire",images.lahore],
-  ["1566","Lahore Fort",images.lahore],
-  ["1673","Badshahi Mosque",images.lahore],
-  ["1541","Rohtas Fort",images.rohtas],
   ["14th C.","Makli Necropolis",images.makli],
+  ["1526","Mughal Empire",images.lahore],
+  ["1541","Rohtas Fort",images.rohtas],
+  ["1566","Lahore Fort",images.lahoreFort],
+  ["1673","Badshahi Mosque",images.badshahi],
 ] as const;
 
 function DiscoverPakistan() {
@@ -272,12 +273,12 @@ function DiscoverPakistan() {
             <h2 className="mt-4 max-w-4xl font-display text-5xl md:text-7xl">Experience Pakistan<br /><span className="italic">Beyond the Ordinary.</span></h2>
           </div>
           <div className="mx-auto mt-14 grid max-w-[1500px] gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-            {experiences.map(([Icon,title,text]) => (
+            {experiences.map(([Icon,title,text,target]) => (
               <article className="reveal group bg-card p-8 transition-colors hover:bg-secondary/70 lg:p-10" key={title}>
                 <Icon className="mb-12 h-7 w-7 text-primary" />
                 <h3 className="font-display text-3xl">{title}</h3>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{text}</p>
-                <a href="#plan-your-journey" className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[.18em] text-primary">Explore this experience <ArrowRight className="h-4 w-4" /></a>
+                <a href={`#${target}`} className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[.18em] text-primary">Explore this experience <ArrowRight className="h-4 w-4" /></a>
               </article>
             ))}
           </div>
@@ -325,7 +326,7 @@ function DiscoverPakistan() {
 
         <section className="border-y border-border bg-card/30 px-5 py-20 lg:px-10">
           <div className="mx-auto grid max-w-[1500px] gap-12 md:grid-cols-4">
-            {[["8,000m+","World's highest peaks"],["5,000+ Years","Of ancient history"],["700+ km","Arabian Sea coastline"],["Every Terrain","Mountain, desert, forest & sea"]].map(([n,l]) => (
+            {[[">8,000m","Pakistan's highest peaks"],["5,000+ Years","Of ancient history"],["1,046 km","Arabian Sea coastline"],["Every Terrain","Mountain, desert, forest & sea"]].map(([n,l]) => (
               <div className="reveal border-l border-primary pl-6" key={n}><p className="font-display text-4xl text-primary md:text-5xl">{n}</p><p className="mt-3 text-sm text-muted-foreground">{l}</p></div>
             ))}
           </div>
@@ -378,7 +379,7 @@ function DiscoverPakistan() {
               <p className="text-xs uppercase tracking-[.3em] text-primary">Plan your next horizon</p>
               <h2 className="mt-4 font-display text-5xl md:text-7xl">Have a question?<br /><span className="italic text-primary">Let's explore.</span></h2>
               <p className="mt-6 max-w-xl text-sm leading-7 text-muted-foreground">For destination suggestions, partnerships or travel-guide questions, get in touch.</p>
-              <a href="mailto:hello@discoverpakistan.example" className="mt-8 inline-flex items-center gap-3 text-sm text-primary hover:text-foreground"><Mail className="h-4 w-4" /> hello@discoverpakistan.example</a>
+              <a href="https://tourism.gov.pk/" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 text-sm text-primary hover:text-foreground"><Compass className="h-4 w-4" /> Official Pakistan tourism resources <ArrowRight className="h-4 w-4" /></a>
             </div>
             <div className="reveal grid gap-3">
               <div className="rounded-lg border border-border bg-card p-7"><Clock className="h-5 w-5 text-primary" /><h3 className="mt-5 font-display text-2xl">Take your time</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">Save this guide and build your route around the places that inspire you most.</p></div>
@@ -398,10 +399,10 @@ function DiscoverPakistan() {
           </div>
           <div className="mt-16 flex flex-col justify-between gap-5 border-t border-border pt-7 text-xs text-muted-foreground md:flex-row">
             <p>© 2026 Discover Pakistan. Celebrating the beauty, heritage and diversity of Pakistan.</p>
-            <div className="flex gap-4">
-              <a href="https://instagram.com" aria-label="Instagram" rel="noreferrer"><Instagram /></a>
-              <a href="https://youtube.com" aria-label="YouTube" rel="noreferrer"><Youtube /></a>
-              <a href="https://facebook.com" aria-label="Facebook" rel="noreferrer"><Facebook /></a>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-[10px] uppercase tracking-[.16em]">
+              <a href="https://tourism.gov.pk/" target="_blank" rel="noreferrer" className="hover:text-primary">Pakistan Tourism</a>
+              <a href="https://doam.gov.pk/" target="_blank" rel="noreferrer" className="hover:text-primary">Heritage & Archaeology</a>
+              <a href="https://whc.unesco.org/en/statesparties/pk" target="_blank" rel="noreferrer" className="hover:text-primary">UNESCO Pakistan</a>
             </div>
           </div>
         </div>
